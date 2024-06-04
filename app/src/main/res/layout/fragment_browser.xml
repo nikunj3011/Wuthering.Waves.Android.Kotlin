@@ -4,7 +4,7 @@
 
     <data>
 
-        <import type="com.oscarliang.flow.ui.common.ClickListener" />
+        <import type="wutheringwavesguide.ui.common.ClickListener" />
 
         <variable
             name="backListener"

@@ -6,17 +6,17 @@ plugins {
 }
 
 android {
-    namespace 'com.oscarliang.flow'
+    namespace 'wutheringwavesguide'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.oscarliang.flow"
+        applicationId "wutheringwavesguide.wutheringwavesguide"
         minSdk 27
         targetSdk 34
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -35,10 +35,10 @@ android {
     buildFeatures {
         dataBinding true
     }
-    sourceSets {
-        androidTest.java.srcDirs += "src/test-common/java"
-        test.java.srcDirs += "src/test-common/java"
-    }
+//    sourceSets {
+//        androidTest.java.srcDirs += "src/test-common/java"
+//        test.java.srcDirs += "src/test-common/java"
+//    }
 }
 
 dependencies {

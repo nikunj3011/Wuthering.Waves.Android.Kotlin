@@ -4,17 +4,17 @@
 
     <data>
 
-        <import type="com.oscarliang.flow.models.db.News" />
+        <import type="wutheringwavesguide.models.db.News" />
 
         <import type="java.util.List" />
 
-        <import type="com.oscarliang.flow.util.Resource" />
+        <import type="wutheringwavesguide.util.Resource" />
 
-        <import type="com.oscarliang.flow.util.State" />
+        <import type="wutheringwavesguide.util.State" />
 
         <variable
             name="listener"
-            type="com.oscarliang.flow.ui.common.ClickListener" />
+            type="wutheringwavesguide.ui.common.ClickListener" />
 
         <variable
             name="resource"

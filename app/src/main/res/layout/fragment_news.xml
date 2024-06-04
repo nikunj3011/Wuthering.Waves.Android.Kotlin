@@ -7,13 +7,13 @@
 
         <import type="androidx.lifecycle.LiveData" />
 
-        <import type="com.oscarliang.flow.util.Resource" />
+        <import type="wutheringwavesguide.util.Resource" />
 
-        <import type="com.oscarliang.flow.util.State" />
+        <import type="wutheringwavesguide.util.State" />
 
         <import type="java.util.List" />
 
-        <import type="com.oscarliang.flow.models.db.News" />
+        <import type="wutheringwavesguide.models.db.News" />
 
         <variable
             name="isRunning"
@@ -25,7 +25,7 @@
 
         <variable
             name="retryListener"
-            type="com.oscarliang.flow.ui.common.ClickListener" />
+            type="wutheringwavesguide.ui.common.ClickListener" />
 
         <variable
             name="latestNews"

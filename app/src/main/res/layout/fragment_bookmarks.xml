@@ -9,7 +9,7 @@
 
         <import type="java.util.List" />
 
-        <import type="com.oscarliang.flow.models.db.News" />
+        <import type="wutheringwavesguide.models.db.News" />
 
         <variable
             name="bookmarks"

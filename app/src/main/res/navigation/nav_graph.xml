@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.oscarliang.flow.ui.news.NewsFragment"
+        android:name="wutheringwavesguide.ui.news.NewsFragment"
         android:label="NewsFragment"
         tools:layout="@layout/fragment_news" />
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.oscarliang.flow.ui.search.SearchFragment"
+        android:name="wutheringwavesguide.ui.search.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/bookmarksFragment"
-        android:name="com.oscarliang.flow.ui.bookmarks.BookmarksFragment"
+        android:name="wutheringwavesguide.ui.bookmarks.BookmarksFragment"
         android:label="BookmarksFragment"
         tools:layout="@layout/fragment_bookmarks" />
 
     <fragment
         android:id="@+id/newsDetailFragment"
-        android:name="com.oscarliang.flow.ui.newsdetail.NewsDetailFragment"
+        android:name="wutheringwavesguide.ui.newsdetail.NewsDetailFragment"
         android:label="NewsDetailFragment"
         tools:layout="@layout/fragment_news_detail">
 
@@ -45,7 +45,7 @@
 
     <fragment
         android:id="@+id/browserFragment"
-        android:name="com.oscarliang.flow.ui.newsdetail.BrowserFragment"
+        android:name="wutheringwavesguide.ui.newsdetail.BrowserFragment"
         android:label="BrowserFragment"
         tools:layout="@layout/fragment_browser">
 
@@ -57,7 +57,7 @@
 
     <dialog
         android:id="@+id/settingsDialog"
-        android:name="com.oscarliang.flow.ui.settings.SettingsDialog"
+        android:name="wutheringwavesguide.ui.settings.SettingsDialog"
         android:label="SettingsDialog"
         tools:layout="@layout/dialog_settings" />
 

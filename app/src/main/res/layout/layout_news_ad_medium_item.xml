@@ -6,7 +6,7 @@
 
         <variable
             name="news"
-            type="com.oscarliang.flow.models.db.News" />
+            type="wutheringwavesguide.models.db.News" />
     </data>
 
     <LinearLayout
