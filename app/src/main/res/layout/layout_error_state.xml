@@ -1,0 +1,55 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.oscarliang.flow.models.db.News" />
+
+        <import type="java.util.List" />
+
+        <import type="com.oscarliang.flow.util.Resource" />
+
+        <import type="com.oscarliang.flow.util.State" />
+
+        <variable
+            name="listener"
+            type="com.oscarliang.flow.ui.common.ClickListener" />
+
+        <variable
+            name="resource"
+            type="Resource&lt;List&lt;News>>" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:showHide="@{resource.state == State.ERROR &amp;&amp; resource.data.size() == 0}">
+
+        <TextView
+            android:id="@+id/text_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{resource.message ?? @string/unknown_error}"
+            android:textColor="@color/gray_500"
+            android:textSize="@dimen/text_body_small"
+            tools:text="Error" />
+
+        <Button
+            android:id="@+id/btn_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:backgroundTint="@color/gray_500"
+            android:onClick="@{() -> listener.onClick()}"
+            android:text="@string/retry"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_body_medium" />
+
+    </LinearLayout>
+
+</layout>
