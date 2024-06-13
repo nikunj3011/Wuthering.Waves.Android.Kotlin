@@ -154,6 +154,7 @@
                         android:id="@+id/news_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#242424"
                         android:nestedScrollingEnabled="false"
                         android:orientation="vertical"
                         app:layoutManager="StaggeredGridLayoutManager"
