@@ -22,7 +22,7 @@ class DiscoverActivity : AppCompatActivity() {
         editor = sf.edit()
         enableEdgeToEdge()
         setContentView(R.layout.activity_discover)
-        if(sf.getBoolean("discoveryCompletedd",false)){
+        if(sf.getBoolean("discoveryCompleted",false)){
             val intent = Intent(this@DiscoverActivity,HomeActivity::class.java);
             startActivity(intent);
         }
@@ -32,7 +32,7 @@ class DiscoverActivity : AppCompatActivity() {
             val intent = Intent(this@DiscoverActivity,HomeActivity::class.java);
             editor.apply{
                 isDiscoveryCompleted = true
-                putBoolean("discoveryCompletedd", isDiscoveryCompleted)
+                putBoolean("discoveryCompleted", isDiscoveryCompleted)
                 commit()
             }
             startActivity(intent);
