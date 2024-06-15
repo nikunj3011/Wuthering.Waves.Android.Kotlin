@@ -3,10 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/newsFragment">
-    <activity
-        android:id="@+id/discoverActivity"
-        android:name="wutheringwavesguide.DiscoverActivity"
-        android:label="activity_discover"
-        tools:layout="@layout/activity_discover" />
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/characterFragment"
+        android:name="wutheringwavesguide.CharacterFragment"
+        android:label="fragment_character"
+        tools:layout="@layout/fragment_character" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="wutheringwavesguide.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_characterFragment"
+            app:destination="@id/characterFragment"
+            app:enterAnim="@anim/anim_slide_in_left"
+            app:exitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_slide_in_right"
+            app:popExitAnim="@anim/anim_slide_out_left" />
+    </fragment>
 </navigation>
