@@ -1,28 +1,29 @@
 package wutheringwavesguide
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.core.view.isVisible
-import androidx.navigation.findNavController
+import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import wutheringwavesguide.binding.HomeViewPagerAdapter
-import wutheringwavesguide.HomeActivity
-import wutheringwavesguide.databinding.ActivityHomeBinding
 import wutheringwavesguide.databinding.FragmentHomeBinding
+
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
+    private val wutheringGuidesService by viewModel<HomeViewModel>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        requireActivity().startService(Intent(context, wutheringGuidesService::class.java))
         binding = FragmentHomeBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
 //        binding.btnGoToCharacters.setOnClickListener {
@@ -37,9 +38,12 @@ class HomeFragment : Fragment() {
         TabLayoutMediator(homeTabLayout, homeViewPager) { tab, position ->
             when(position){
                 0 -> tab.text = "Home"
-                1 -> tab.text = "Character"
+                1 -> tab.text = "Echo"
+                2 -> tab.text = "Character"
             }
         }.attach()
+        val response = wutheringGuidesService.echoesLiveData
+
         return binding.root
     }
 

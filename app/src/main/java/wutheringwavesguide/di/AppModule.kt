@@ -21,12 +21,16 @@ import wutheringwavesguide.util.NEWS_URL
 import wutheringwavesguide.util.PREFERENCE_NAME
 import wutheringwavesguide.util.REFRESH_TIMEOUT
 import wutheringwavesguide.util.RateLimiter
-import wutheringwavesguide.util.VIDEOS_URL
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import wutheringwavesguide.HomeViewModel
+import wutheringwavesguide.api.WutheringGuidesService
+import wutheringwavesguide.repository.HomeRepository
+import wutheringwavesguide.ui.echos.EchoViewModel
+import wutheringwavesguide.util.WUTHERINGGuide_URL
 import java.util.concurrent.TimeUnit
 
 val appModule = module {
@@ -45,6 +49,14 @@ val appModule = module {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(NewsService::class.java)
+    }
+
+    single {
+        Retrofit.Builder()
+            .baseUrl(WUTHERINGGuide_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(WutheringGuidesService::class.java)
     }
 
     single {
@@ -86,6 +98,18 @@ val appModule = module {
 
     single {
         UserRepository(get())
+    }
+
+    single {
+        HomeRepository(get())
+    }
+
+    viewModel {
+        HomeViewModel(get())
+    }
+
+    viewModel {
+        EchoViewModel(get())
     }
 
     viewModel {
