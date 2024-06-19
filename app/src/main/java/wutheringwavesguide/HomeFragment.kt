@@ -25,6 +25,19 @@ class HomeFragment : Fragment() {
     ): View? {
         requireActivity().startService(Intent(context, wutheringGuidesService::class.java))
         binding = FragmentHomeBinding.inflate(inflater,container,false)
+        val homeViewPager: ViewPager2 = binding.viewPagerHome
+        val homeTabLayout: TabLayout = binding.homeTabLayout
+        homeViewPager.adapter = HomeViewPagerAdapter(requireActivity())
+        TabLayoutMediator(homeTabLayout, homeViewPager) { tab, position ->
+            when(position){
+                0 -> tab.text = "Home"
+                1 -> tab.text = "Characters"
+                2 -> tab.text = "Echos"
+                3 -> tab.text = "Weapons"
+            }
+        }.attach()
+        val response = wutheringGuidesService.echoesLiveData
+        return binding.root
         // Inflate the layout for this fragment
 //        binding.btnGoToCharacters.setOnClickListener {
 //            val bundle = bundleOf("textviewData" to binding.textView3.text.toString())
@@ -32,19 +45,6 @@ class HomeFragment : Fragment() {
 //        }
 //        binding.btnGoToCharacters.isVisible = false
 //        binding.textView3.isVisible = false
-        val homeViewPager: ViewPager2 = binding.viewPagerHome
-        val homeTabLayout: TabLayout = binding.homeTabLayout
-        homeViewPager.adapter = HomeViewPagerAdapter(requireActivity())
-        TabLayoutMediator(homeTabLayout, homeViewPager) { tab, position ->
-            when(position){
-                0 -> tab.text = "Home"
-                1 -> tab.text = "Echo"
-                2 -> tab.text = "Character"
-            }
-        }.attach()
-        val response = wutheringGuidesService.echoesLiveData
-
-        return binding.root
     }
 
 }

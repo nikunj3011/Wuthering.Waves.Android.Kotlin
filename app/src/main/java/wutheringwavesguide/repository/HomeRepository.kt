@@ -13,4 +13,6 @@ class HomeRepository(
     private val apiService: WutheringGuidesService
 ) {
     suspend fun fetchEchoes() = apiService.getEchoes()
+    suspend fun fetchCharacters() = apiService.getCharacters()
+    suspend fun fetchWeapons() = apiService.getWeapons()
 }

@@ -6,9 +6,8 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/characterFragment"
-        android:name="wutheringwavesguide.CharacterFragment"
-        android:label="fragment_character"
-        tools:layout="@layout/fragment_character" />
+        android:name="wutheringwavesguide.ui.character.CharacterFragment"
+        android:label="fragment_character" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="wutheringwavesguide.HomeFragment"

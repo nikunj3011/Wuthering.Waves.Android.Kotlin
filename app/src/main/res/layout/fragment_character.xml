@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#050505"
-    tools:context=".CharacterFragment">
+    tools:context=".ui.character.CharacterFragment">
 
     <TextView
         android:id="@+id/textView4"

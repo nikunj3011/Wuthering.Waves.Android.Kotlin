@@ -29,7 +29,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import wutheringwavesguide.HomeViewModel
 import wutheringwavesguide.api.WutheringGuidesService
 import wutheringwavesguide.repository.HomeRepository
+import wutheringwavesguide.ui.character.CharacterViewModel
 import wutheringwavesguide.ui.echos.EchoViewModel
+import wutheringwavesguide.ui.weapons.WeaponViewModel
 import wutheringwavesguide.util.WUTHERINGGuide_URL
 import java.util.concurrent.TimeUnit
 
@@ -110,6 +112,14 @@ val appModule = module {
 
     viewModel {
         EchoViewModel(get())
+    }
+
+    viewModel {
+        CharacterViewModel(get())
+    }
+
+    viewModel {
+        WeaponViewModel(get())
     }
 
     viewModel {
