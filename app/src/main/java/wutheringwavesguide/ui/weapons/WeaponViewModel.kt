@@ -18,17 +18,19 @@ class WeaponViewModel(
 
     private val _weaponsLiveData = MutableLiveData<List<WeaponResponseItem>>()
     val weaponsLiveData: LiveData<List<WeaponResponseItem>> get() = _weaponsLiveData
+    var _weapons = listOf<WeaponResponseItem>()
 
     init {
-        fetchEchoes()
+        fetchWepons()
     }
-    private fun fetchEchoes() {
+    private fun fetchWepons() {
         viewModelScope.launch {
             try {
                 val newItem = withContext(Dispatchers.IO) {
                     repository.fetchWeapons()
                 }
                 _weaponsLiveData.postValue(newItem.body()?.toList())
+                _weapons = newItem.body()!!.toList()
                 Log.e("element", newItem.toString())
             } catch (e: Exception) {
                 // Handle exceptions, if any

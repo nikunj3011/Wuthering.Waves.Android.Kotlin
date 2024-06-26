@@ -3,6 +3,7 @@ package wutheringwavesguide.api
 import retrofit2.Response
 import retrofit2.http.GET
 import wutheringwavesguide.models.api.character.CharacterResponse
+import wutheringwavesguide.models.api.characterdetails.CharactersDetailsResponse
 import wutheringwavesguide.models.api.echo.EchoesResponse
 import wutheringwavesguide.models.api.weapon.WeaponResponse
 
@@ -19,4 +20,8 @@ interface WutheringGuidesService {
     @GET("weapons.json")
     suspend fun getWeapons(
     ): Response<WeaponResponse>
+
+    @GET("charactersdetails.json")
+    suspend fun getCharactersDetails(
+    ): Response<CharactersDetailsResponse>
 }

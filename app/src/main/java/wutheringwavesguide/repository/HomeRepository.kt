@@ -15,4 +15,5 @@ class HomeRepository(
     suspend fun fetchEchoes() = apiService.getEchoes()
     suspend fun fetchCharacters() = apiService.getCharacters()
     suspend fun fetchWeapons() = apiService.getWeapons()
+    suspend fun fetchCharactersDetails() = apiService.getCharactersDetails()
 }

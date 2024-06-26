@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".HomeActivity">
 
     <androidx.fragment.app.FragmentContainerView
@@ -22,8 +23,8 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="0dp"
-        android:layout_height="77dp"
-        android:background="#0C0C0C"
+        android:layout_height="67dp"
+        android:background="#000000"
         app:itemActiveIndicatorStyle="@style/TextAppearance.Material3.BodyLarge"
         app:itemIconTint="@color/gray_700"
         app:itemTextAppearanceActive="@style/TextAppearance.AppCompat.Medium"

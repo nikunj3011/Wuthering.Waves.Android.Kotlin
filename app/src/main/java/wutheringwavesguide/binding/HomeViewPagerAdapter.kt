@@ -14,7 +14,7 @@ class HomeViewPagerAdapter(fa: FragmentActivity): FragmentStateAdapter(fa){
 
     override fun createFragment(position: Int): Fragment {
         return when(position){
-            0 -> CharacterFragment()
+            0 -> EchoFragment()
             1 -> CharacterFragment()
             2 -> EchoFragment()
             3 -> WeaponFragment()

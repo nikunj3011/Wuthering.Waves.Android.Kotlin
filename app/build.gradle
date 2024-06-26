@@ -122,7 +122,11 @@ dependencies {
     testImplementation "androidx.arch.core:core-testing:$androidx_arch_test_version"
     androidTestImplementation "androidx.arch.core:core-testing:$androidx_arch_test_version"
 
+    implementation("androidx.cardview:cardview:1.0.0")
+
     // Fragment test
     def fragment_version = "1.6.2"
     debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
+
+    implementation 'com.github.bumptech.glide:glide:4.4.0'
 }

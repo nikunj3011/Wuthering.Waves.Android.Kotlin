@@ -7,7 +7,20 @@
     <fragment
         android:id="@+id/characterFragment"
         android:name="wutheringwavesguide.ui.character.CharacterFragment"
-        android:label="fragment_character" />
+        android:label="fragment_character" >
+
+        <argument
+            android:name="characterId"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_characterFragment_to_characterDetailedFragment"
+            app:destination="@id/characterDetailedFragment"
+            app:enterAnim="@anim/anim_slide_in_left"
+            app:exitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_slide_in_right"
+            app:popExitAnim="@anim/anim_slide_out_left" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="wutheringwavesguide.HomeFragment"
@@ -20,5 +33,14 @@
             app:exitAnim="@anim/anim_slide_out_right"
             app:popEnterAnim="@anim/anim_slide_in_right"
             app:popExitAnim="@anim/anim_slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailedFragment"
+        android:name="wutheringwavesguide.ui.characterdetail.CharacterDetailedFragment"
+        android:label="fragment_character_detailed"
+        tools:layout="@layout/fragment_character_detailed">
+        <argument
+            android:name="newsUrl"
+            app:argType="string" />
     </fragment>
 </navigation>

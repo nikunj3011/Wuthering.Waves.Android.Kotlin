@@ -30,6 +30,7 @@ import wutheringwavesguide.HomeViewModel
 import wutheringwavesguide.api.WutheringGuidesService
 import wutheringwavesguide.repository.HomeRepository
 import wutheringwavesguide.ui.character.CharacterViewModel
+import wutheringwavesguide.ui.characterdetail.CharacterDetailsViewModel
 import wutheringwavesguide.ui.echos.EchoViewModel
 import wutheringwavesguide.ui.weapons.WeaponViewModel
 import wutheringwavesguide.util.WUTHERINGGuide_URL
@@ -112,6 +113,10 @@ val appModule = module {
 
     viewModel {
         EchoViewModel(get())
+    }
+
+    viewModel {
+        CharacterDetailsViewModel(get())
     }
 
     viewModel {

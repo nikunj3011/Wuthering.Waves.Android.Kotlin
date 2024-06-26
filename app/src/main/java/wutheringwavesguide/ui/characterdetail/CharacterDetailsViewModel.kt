@@ -1,4 +1,4 @@
-package wutheringwavesguide.ui.echos
+package wutheringwavesguide.ui.characterdetail
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -8,28 +8,28 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import wutheringwavesguide.models.api.echo.EchoesResponseItem
+import wutheringwavesguide.models.api.characterdetails.CharacterDetailsResponseItem
 import wutheringwavesguide.repository.HomeRepository
 
-class EchoViewModel(
+class CharacterDetailsViewModel(
     private val repository: HomeRepository
 ) : ViewModel() {
 
-    private val _echoesLiveData = MutableLiveData<List<EchoesResponseItem>>()
-    var _echoes = listOf<EchoesResponseItem>()
-    val echoesLiveData: LiveData<List<EchoesResponseItem>> get() = _echoesLiveData
+    private val _characterDetailsLiveData = MutableLiveData<List<CharacterDetailsResponseItem>>()
+    var _characterDetails = listOf<CharacterDetailsResponseItem>()
+    val characterDetailsLiveData: LiveData<List<CharacterDetailsResponseItem>> get() = _characterDetailsLiveData
 
     init {
-        fetchEchoes()
+        fetchCharacterDetails()
     }
-    private fun fetchEchoes() {
+    private fun fetchCharacterDetails() {
         viewModelScope.launch {
             try {
                 val newItem = withContext(Dispatchers.IO) {
-                    repository.fetchEchoes()
+                    repository.fetchCharactersDetails()
                 }
-                _echoesLiveData.postValue(newItem.body()?.toList())
-                _echoes = newItem.body()!!.toList()
+                _characterDetailsLiveData.postValue(newItem.body()?.toList())
+                _characterDetails = newItem.body()!!.toList()
                 Log.e("element", newItem.toString())
             } catch (e: Exception) {
                 // Handle exceptions, if any
