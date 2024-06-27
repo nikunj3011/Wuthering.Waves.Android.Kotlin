@@ -5,6 +5,8 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import wutheringwavesguide.ui.character.CharacterFragment
 import wutheringwavesguide.ui.echos.EchoFragment
+import wutheringwavesguide.ui.homedata.HomeDataFragment
+import wutheringwavesguide.ui.homedata.HomeDataViewModel
 import wutheringwavesguide.ui.weapons.WeaponFragment
 
 class HomeViewPagerAdapter(fa: FragmentActivity): FragmentStateAdapter(fa){
@@ -14,7 +16,7 @@ class HomeViewPagerAdapter(fa: FragmentActivity): FragmentStateAdapter(fa){
 
     override fun createFragment(position: Int): Fragment {
         return when(position){
-            0 -> EchoFragment()
+            0 -> HomeDataFragment()
             1 -> CharacterFragment()
             2 -> EchoFragment()
             3 -> WeaponFragment()

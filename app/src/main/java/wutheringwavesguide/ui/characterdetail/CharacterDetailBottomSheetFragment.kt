@@ -48,71 +48,19 @@ class CharacterDetailBottomSheetFragment :  BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.characterDetailsLiveData.observe(viewLifecycleOwner) { result ->
             var character = result.findLast { it.id == characterId }
-            binding.characterNameDetailBottomSheet.text = character?.name.toString()
+            binding.characterNameBottomSheet.text = character?.name.toString()
 
             if(character?.img != null){
                 Glide.with(view)
                     .load(character.img)
-                    .into(binding.imageViewCharacterDetailBottomSheet)
+                    .into(binding.imageViewCharacterBottomSheet)
                 if(character.bStyle == "linear-gradient(0deg, rgba(119,61,166,1) -79%, rgba(255,255,255,0) 100%)"){
-                    binding.imageViewCharacterDetailBottomSheet.background = ContextCompat.getDrawable(requireContext(), R.drawable.four_star_gradient)
+                    binding.imageViewCharacterBottomSheet.background = ContextCompat.getDrawable(requireContext(), R.drawable.four_star_gradient)
                 }
                 else{
-                    binding.imageViewCharacterDetailBottomSheet.background = ContextCompat.getDrawable(requireContext(), R.drawable.five_star_gradient)
+                    binding.imageViewCharacterBottomSheet.background = ContextCompat.getDrawable(requireContext(), R.drawable.five_star_gradient)
                 }
             }
         }
-        binding.characterNameDetailBottomSheet.setOnClickListener {
-            if(true)
-                view.expand(300)
-            else
-                view.collapse(300)
-        }
-    }
-
-    fun View.expand(duration: Long) {
-        val initialHeight = this.measuredHeight
-        val matchParentMeasureSpec = View.MeasureSpec.makeMeasureSpec((this.parent as View).width, View.MeasureSpec.EXACTLY)
-        val wrapContentMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
-        this.measure(matchParentMeasureSpec, wrapContentMeasureSpec)
-        val targetHeight = this.measuredHeight
-
-        this.layoutParams.height = initialHeight
-        this.visibility = View.VISIBLE
-        val a: Animation = object : Animation() {
-            override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
-                this@expand.layoutParams.height = if (interpolatedTime == 1.0f) ViewGroup.LayoutParams.WRAP_CONTENT else (initialHeight + ((targetHeight - initialHeight) * interpolatedTime)).toInt()
-                this@expand.requestLayout()
-            }
-
-            override fun willChangeBounds(): Boolean {
-                return true
-            }
-        }
-
-
-        a.duration = duration
-        this.startAnimation(a)
-    }
-
-    fun View.collapse(duration: Long) {
-        val initialHeight = this.measuredHeight
-        val a: Animation = object : Animation() {
-            override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
-                if (interpolatedTime == 1.0f) {
-                    this@collapse.visibility = View.GONE
-                } else {
-                    this@collapse.layoutParams.height = initialHeight - (initialHeight * interpolatedTime).toInt()
-                    this@collapse.requestLayout()
-                }
-            }
-
-            override fun willChangeBounds(): Boolean {
-                return true
-            }
-        }
-
-        a.duration = duration
-        this@collapse.startAnimation(a)
     }
 }

@@ -32,6 +32,7 @@ import wutheringwavesguide.repository.HomeRepository
 import wutheringwavesguide.ui.character.CharacterViewModel
 import wutheringwavesguide.ui.characterdetail.CharacterDetailsViewModel
 import wutheringwavesguide.ui.echos.EchoViewModel
+import wutheringwavesguide.ui.homedata.HomeDataViewModel
 import wutheringwavesguide.ui.weapons.WeaponViewModel
 import wutheringwavesguide.util.WUTHERINGGuide_URL
 import java.util.concurrent.TimeUnit
@@ -117,6 +118,10 @@ val appModule = module {
 
     viewModel {
         CharacterDetailsViewModel(get())
+    }
+
+    viewModel {
+        HomeDataViewModel(get())
     }
 
     viewModel {
