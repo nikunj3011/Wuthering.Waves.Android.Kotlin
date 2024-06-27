@@ -26,6 +26,10 @@ class CharacterDetailedFragment : Fragment() {
         )
         binding = dataBinding
         characterId = arguments?.getString("characterId").toString()
+        if(characterId == null)
+        {
+            characterId = "1"
+        }
         return binding.root
     }
 

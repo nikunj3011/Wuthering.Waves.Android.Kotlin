@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.Transformation
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -48,6 +50,7 @@ class EchoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var response = viewModel.echoesLiveData
         binding.echoRecyclerView.layoutManager = LinearLayoutManager(requireActivity())
+
         initRecyclerView()
     }
 
