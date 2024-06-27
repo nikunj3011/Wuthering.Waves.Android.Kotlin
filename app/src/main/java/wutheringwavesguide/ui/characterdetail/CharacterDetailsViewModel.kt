@@ -8,16 +8,17 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import wutheringwavesguide.models.api.characterdetail.CharacterDetailResponse
 import wutheringwavesguide.models.api.characterdetails.CharacterDetailsResponseItem
 import wutheringwavesguide.repository.HomeRepository
 
 class CharacterDetailsViewModel(
-    private val repository: HomeRepository
+    private val repository: HomeRepository,
 ) : ViewModel() {
 
-    private val _characterDetailsLiveData = MutableLiveData<List<CharacterDetailsResponseItem>>()
-    var _characterDetails = listOf<CharacterDetailsResponseItem>()
-    val characterDetailsLiveData: LiveData<List<CharacterDetailsResponseItem>> get() = _characterDetailsLiveData
+    private val _characterDetailsLiveData = MutableLiveData<CharacterDetailResponse>()
+    val characterDetailsLiveData: LiveData<CharacterDetailResponse> get() = _characterDetailsLiveData
+    var id: String = ""
 
     init {
         fetchCharacterDetails()
@@ -26,11 +27,9 @@ class CharacterDetailsViewModel(
         viewModelScope.launch {
             try {
                 val newItem = withContext(Dispatchers.IO) {
-                    repository.fetchCharactersDetails()
+                    repository.fetchCharacterDetails(id)
                 }
-                _characterDetailsLiveData.postValue(newItem.body()?.toList())
-                _characterDetails = newItem.body()!!.toList()
-                Log.e("element", newItem.toString())
+                _characterDetailsLiveData.postValue(newItem.body())
             } catch (e: Exception) {
                 // Handle exceptions, if any
                 Log.e("getDetail", "Error fetching details: ${e.message}")

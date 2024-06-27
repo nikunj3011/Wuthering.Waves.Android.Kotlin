@@ -17,14 +17,10 @@ class HomeDataFragment : Fragment() {
     var binding by autoCleared<FragmentHomeDataBinding>()
     private val viewModel by viewModel<HomeDataViewModel>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val dataBinding = FragmentHomeDataBinding.inflate(
             inflater,
             container,

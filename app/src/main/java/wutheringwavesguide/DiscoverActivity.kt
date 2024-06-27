@@ -23,19 +23,19 @@ class DiscoverActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_discover)
         if(sf.getBoolean("discoveryCompleted",false)){
-            val intent = Intent(this@DiscoverActivity,HomeActivity::class.java);
-            startActivity(intent);
+            val intent = Intent(this@DiscoverActivity,HomeActivity::class.java)
+            startActivity(intent)
         }
         val button: Button = findViewById<Button>(R.id.btnGoToHome)
         // Register the onClick listener with the implementation above
         button.setOnClickListener { view ->
-            val intent = Intent(this@DiscoverActivity,HomeActivity::class.java);
+            val intent = Intent(this@DiscoverActivity,HomeActivity::class.java)
             editor.apply{
                 isDiscoveryCompleted = true
                 putBoolean("discoveryCompleted", isDiscoveryCompleted)
                 commit()
             }
-            startActivity(intent);
+            startActivity(intent)
         }
     }
 }

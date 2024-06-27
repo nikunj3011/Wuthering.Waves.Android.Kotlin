@@ -14,11 +14,11 @@ import wutheringwavesguide.databinding.FragmentCharacterDetailedBinding
 class CharacterDetailedFragment : Fragment() {
     private lateinit var binding: FragmentCharacterDetailedBinding
     private val viewModel by viewModel<CharacterDetailsViewModel>()
-    private var characterId : String? = null
+    private lateinit var characterId : String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val dataBinding = FragmentCharacterDetailedBinding.inflate(
             inflater,
             container,
@@ -34,8 +34,9 @@ class CharacterDetailedFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.id = characterId
         viewModel.characterDetailsLiveData.observe(viewLifecycleOwner) { result ->
-            var character = result.findLast { it.id == characterId }
+            var character = result
             binding.characterNameDetail.text = character?.name.toString()
 
             if(character?.img != null){

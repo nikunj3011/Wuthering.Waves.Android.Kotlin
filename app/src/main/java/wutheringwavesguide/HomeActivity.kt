@@ -32,7 +32,7 @@ class HomeActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         this.navController = navHostFragment.navController
-        binding.bottomNav?.setupWithNavController(navController)
+        binding.bottomNav.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val id = destination.id
             val showNav = id != R.id.characterFragment && id != R.id.characterFragment

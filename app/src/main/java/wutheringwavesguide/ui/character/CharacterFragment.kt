@@ -32,7 +32,7 @@ class CharacterFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val dataBinding = FragmentCharacterBinding.inflate(
             inflater,
             container,

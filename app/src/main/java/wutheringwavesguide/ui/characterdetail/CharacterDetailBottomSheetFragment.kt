@@ -4,31 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.Transformation
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import wutheringwavesguide.R
 import wutheringwavesguide.databinding.FragmentCharacterDetailBottomSheetBinding
-import wutheringwavesguide.databinding.FragmentCharacterDetailedBinding
 
 class CharacterDetailBottomSheetFragment :  BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentCharacterDetailBottomSheetBinding
     private val viewModel by viewModel<CharacterDetailsViewModel>()
-    private var characterId : String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var characterId : String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val dataBinding = FragmentCharacterDetailBottomSheetBinding.inflate(
             inflater,
             container,
@@ -46,8 +38,9 @@ class CharacterDetailBottomSheetFragment :  BottomSheetDialogFragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.id = characterId
         viewModel.characterDetailsLiveData.observe(viewLifecycleOwner) { result ->
-            var character = result.findLast { it.id == characterId }
+            var character = result
             binding.characterNameBottomSheet.text = character?.name.toString()
 
             if(character?.img != null){
