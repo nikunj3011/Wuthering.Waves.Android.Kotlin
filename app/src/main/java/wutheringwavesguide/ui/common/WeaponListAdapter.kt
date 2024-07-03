@@ -1,18 +1,21 @@
 package wutheringwavesguide.ui.common
 
+import android.content.Context
 import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import wutheringwavesguide.R
 import wutheringwavesguide.models.api.weapon.WeaponResponseItem
 
 class WeaponListAdapter (
-    private val fruitsList:List<WeaponResponseItem>,
+    private val contextWeapon: Context,
+    private val weaponsList:List<WeaponResponseItem>,
     private val clickListener:(WeaponResponseItem)->Unit
     ) : RecyclerView.Adapter<MyViewHolder2>(){
 
@@ -23,18 +26,18 @@ class WeaponListAdapter (
         }
 
         override fun onBindViewHolder(holder: MyViewHolder2, position: Int) {
-            val fruit = fruitsList[position]
-            holder.bind(fruit,clickListener)
+            val weapon = weaponsList[position]
+            holder.bind(contextWeapon, weapon, clickListener)
         }
 
         override fun getItemCount(): Int {
-            return fruitsList.size
+            return weaponsList.size
         }
 
     }
 
     class MyViewHolder2(val view: View): RecyclerView.ViewHolder(view){
-        fun bind(weapon: WeaponResponseItem, clickListener:(WeaponResponseItem)->Unit) {
+        fun bind(contextWeapon: Context, weapon: WeaponResponseItem, clickListener:(WeaponResponseItem)->Unit) {
             val myTextView = view.findViewById<TextView>(R.id.weaponName)
             myTextView.text = weapon.name
 
@@ -59,6 +62,27 @@ class WeaponListAdapter (
                 Glide.with(view)
                     .load(weapon.img)
                     .into(echoImageView)
+
+                when (weapon.rarityDes) {
+                    "Star5" -> {
+                        echoImageView.background = ContextCompat.getDrawable(contextWeapon, R.drawable.five_star_gradient)
+                    }
+                    "Star4" -> {
+                        echoImageView.background = ContextCompat.getDrawable(contextWeapon, R.drawable.four_star_gradient)
+                    }
+                    "Star3" -> {
+                        echoImageView.background = ContextCompat.getDrawable(contextWeapon, R.drawable.three_star_gradient)
+                    }
+                    "Star2" -> {
+                        echoImageView.background = ContextCompat.getDrawable(contextWeapon, R.drawable.two_star_gradient)
+                    }
+                    "Star1" -> {
+                        echoImageView.background = ContextCompat.getDrawable(contextWeapon, R.drawable.one_star_gradient)
+                    }
+                    else -> {
+                        echoImageView.background = ContextCompat.getDrawable(contextWeapon, R.drawable.one_star_gradient)
+                    }
+                }
             }
 //
 //            view.setOnClickListener {

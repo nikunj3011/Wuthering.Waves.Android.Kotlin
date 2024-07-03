@@ -40,11 +40,11 @@ class MyViewHolder3(val view: View):RecyclerView.ViewHolder(view){
         val characterTextView = view.findViewById<TextView>(R.id.characterName)
         characterTextView.text = character.name
 
-        val rarityTextView = view.findViewById<TextView>(R.id.textCharacterWeapon)
-        rarityTextView.text = "Weapon: BroadBlade"
-
-        val descriptionTextView = view.findViewById<TextView>(R.id.textTypeCharacter)
-        descriptionTextView.text = "Type: " + character.tag
+//        val rarityTextView = view.findViewById<TextView>(R.id.textCharacterWeapon)
+//        rarityTextView.text = "Weapon: BroadBlade"
+//
+//        val descriptionTextView = view.findViewById<TextView>(R.id.textTypeCharacter)
+//        descriptionTextView.text = "Type: " + character.tag
 
 //        val atkTextView = view.findViewById<TextView>(R.id.textWeaponCharacter)
 //        atkTextView.text =  "ATK (Lv.1): " + character.id
@@ -62,6 +62,48 @@ class MyViewHolder3(val view: View):RecyclerView.ViewHolder(view){
             }
             else{
                 echoImageView.background = ContextCompat.getDrawable(contextCharacter, R.drawable.five_star_gradient)
+            }
+        }
+
+        val characterElementImageView = view.findViewById<ImageView>(R.id.imageViewCharacterElement)
+        if(character.tag != null){
+
+            when (character.tag) {
+                "Aero" -> {
+                    Glide.with(view)
+                        .load(R.drawable.element_aero)
+                        .into(characterElementImageView)
+                }
+                "Glacio" -> {
+                    Glide.with(view)
+                        .load(R.drawable.element_glacio)
+                        .into(characterElementImageView)
+                }
+                "Electro" -> {
+                    Glide.with(view)
+                        .load(R.drawable.element_electro)
+                        .into(characterElementImageView)
+                }
+                "Fusion" -> {
+                    Glide.with(view)
+                        .load(R.drawable.element_fusion)
+                        .into(characterElementImageView)
+                }
+                "Havoc" -> {
+                    Glide.with(view)
+                        .load(R.drawable.element_havoc)
+                        .into(characterElementImageView)
+                }
+                "Spectro" -> {
+                    Glide.with(view)
+                        .load(R.drawable.element_spectro)
+                        .into(characterElementImageView)
+                }
+                else -> {
+                    Glide.with(view)
+                        .load(R.drawable.element_spectro)
+                        .into(characterElementImageView)
+                }
             }
         }
 

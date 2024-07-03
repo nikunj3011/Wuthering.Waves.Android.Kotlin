@@ -1,5 +1,6 @@
 package wutheringwavesguide.ui.common
 
+import android.content.Context
 import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
@@ -8,13 +9,17 @@ import android.view.animation.Animation
 import android.view.animation.Transformation
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import wutheringwavesguide.R
+import wutheringwavesguide.databinding.LayoutCategoryItemBinding
+import wutheringwavesguide.databinding.LayoutEchoListBinding
 import wutheringwavesguide.models.api.echo.EchoesResponseItem
 
 
 class EchoListAdapter(
+    private val contextEcho: Context,
     private val fruitsList:List<EchoesResponseItem>,
     private val clickListener:(EchoesResponseItem)->Unit
 ) : RecyclerView.Adapter<MyViewHolder>(){
@@ -27,7 +32,7 @@ class EchoListAdapter(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val fruit = fruitsList[position]
-        holder.bind(fruit,clickListener)
+        holder.bind(contextEcho, fruit, clickListener)
     }
 
     override fun getItemCount(): Int {
@@ -37,7 +42,7 @@ class EchoListAdapter(
 }
 
 class MyViewHolder(val view: View):RecyclerView.ViewHolder(view){
-    fun bind(echo: EchoesResponseItem, clickListener:(EchoesResponseItem)->Unit) {
+    fun bind(contextEcho: Context, echo: EchoesResponseItem, clickListener:(EchoesResponseItem)->Unit) {
         val echoTextView = view.findViewById<TextView>(R.id.echoName)
         echoTextView.text = echo.name
 
@@ -64,9 +69,30 @@ class MyViewHolder(val view: View):RecyclerView.ViewHolder(view){
         setsTextView.text =  "Sets: " + echo.cost
 
         val echoImageView = view.findViewById<ImageView>(R.id.imageView)
-        Glide.with(view)
-            .load(echo.img)
-            .into(echoImageView)
+        if(echo.img != null)
+        {
+            Glide.with(view)
+                .load(echo.img)
+                .into(echoImageView)
+
+            when (echo.classEcho) {
+                "Calamity" -> {
+                    echoImageView.background = ContextCompat.getDrawable(contextEcho, R.drawable.five_star_gradient)
+                }
+                "Overlord" -> {
+                    echoImageView.background = ContextCompat.getDrawable(contextEcho, R.drawable.four_star_gradient)
+                }
+                "Elite" -> {
+                    echoImageView.background = ContextCompat.getDrawable(contextEcho, R.drawable.three_star_gradient)
+                }
+                "Common" -> {
+                    echoImageView.background = ContextCompat.getDrawable(contextEcho, R.drawable.one_star_gradient)
+                }
+                else -> {
+                    echoImageView.background = ContextCompat.getDrawable(contextEcho, R.drawable.one_star_gradient)
+                }
+            }
+        }
 
 //        view.setOnClickListener {
 //            clickListener(echo)

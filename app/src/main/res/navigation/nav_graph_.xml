@@ -43,4 +43,9 @@
             android:name="newsUrl"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="wutheringwavesguide.ui.info.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
 </navigation>

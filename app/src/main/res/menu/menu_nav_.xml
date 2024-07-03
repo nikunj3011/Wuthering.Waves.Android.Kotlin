@@ -3,13 +3,13 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_news"
+        android:icon="@drawable/baseline_home_24"
         android:title="@null"
         />
 
     <item
-        android:id="@+id/characterFragment"
-        android:icon="@drawable/ic_search"
+        android:id="@+id/infoFragment"
+        android:icon="@drawable/baseline_expand_less_24"
         android:title="@null" />
 
 <!--    <item-->

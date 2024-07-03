@@ -57,6 +57,7 @@ class EchoFragment : Fragment() {
     private fun initRecyclerView() {
         viewModel.echoesLiveData.observe(viewLifecycleOwner) { result ->
             this.echosAdapter = EchoListAdapter(
+                requireContext(),
                 result
             ) { selectedItem: EchoesResponseItem ->
                 listItemClicked(selectedItem)

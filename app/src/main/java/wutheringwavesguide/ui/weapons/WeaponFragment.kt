@@ -53,6 +53,7 @@ class WeaponFragment : Fragment() {
     private fun initRecyclerView() {
         viewModel.weaponsLiveData.observe(viewLifecycleOwner) { result ->
             this.weaponsAdapter = WeaponListAdapter(
+                requireContext(),
                 result
             ) { selectedItem: WeaponResponseItem ->
                 listItemClicked(selectedItem)

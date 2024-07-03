@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="1200dp"
+    android:elevation="20dp"
     android:fillViewport="true">
 
 
@@ -15,38 +16,43 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/layout_bg">
 
-        <TextView
-            android:id="@+id/characterNameBottomSheet"
-            android:layout_width="174dp"
-            android:layout_height="39dp"
-            android:layout_margin="20dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="20dp"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewCharacterBottomSheet"
+        <ImageView
+            android:id="@+id/imageViewCharacterRegionBottomSheet"
+            android:layout_width="105dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            tools:srcCompat="@tools:sample/avatars" />
 
         <ImageView
             android:id="@+id/imageViewCharacterBottomSheet"
-            android:layout_width="91dp"
-            android:layout_height="153dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="208dp"
+            android:layout_height="422dp"
+            android:layout_marginTop="4dp"
+            android:elevation="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.141"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.434"
             tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textCharacterNameTransparentBottomSheet"
+            android:layout_width="473dp"
+            android:layout_height="123dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="right"
+            android:text="TextView"
+            android:textColor="@color/gray_transparent"
+            android:textSize="90sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textWeaponCharacterBottomSheet"
@@ -63,16 +69,13 @@
             android:id="@+id/textCharacterSonataEffectBottomSheet"
             android:layout_width="76dp"
             android:layout_height="22dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
             android:text="TextView"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.694"
-            app:layout_constraintStart_toEndOf="@+id/textWeaponCharacterBottomSheet"
-            app:layout_constraintTop_toBottomOf="@+id/textTypeCharacterBottomSheet"
-            app:layout_constraintVertical_bias="0.826" />
+            app:layout_constraintStart_toEndOf="@+id/textWeaponCharacterBottomSheet" />
 
         <TextView
             android:id="@+id/textCharacterWeaponBottomSheet"
@@ -86,17 +89,194 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet" />
 
+        <ImageView
+            android:id="@+id/imageViewCharacterElementBottomSheet"
+            android:layout_width="56dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toEndOf="@+id/txtCharacterNameBottomSheet"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
         <TextView
-            android:id="@+id/textTypeCharacterBottomSheet"
-            android:layout_width="173dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="700dp"
+            android:id="@+id/txtCharacterWeaponTypeBottomSheet"
+            android:layout_width="111dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
             android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/textCharacterWeaponBottomSheet"
+            android:textColor="@color/gray_500"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
-            app:layout_constraintTop_toBottomOf="@+id/characterNameBottomSheet"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/txtCharacterNameBottomSheet" />
+
+        <TextView
+            android:id="@+id/textDescriptionBottomSheet"
+            android:layout_width="359dp"
+            android:layout_height="191dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="650dp"
+            android:text="TextView"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.537"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewCharacterBottomSheet"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/txtCharacterNameBottomSheet"
+            android:layout_width="309dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="right"
+            android:text="Text"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textMainDPSCharacterBottomSheet"
+            android:layout_width="65dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textSubDPSCharacterBottomSheet"
+            android:layout_width="65dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textMainDPSCharacterBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textOverallCharacterBottomSheet"
+            android:layout_width="65dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="TextView"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/textDescriptionBottomSheet"
+            app:layout_constraintStart_toEndOf="@+id/textSupportCharacterBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/textSubDPSCharacterBottomSheet" />
+
+        <TextView
+            android:id="@+id/textSupportCharacterBottomSheet"
+            android:layout_width="65dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="TextView"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/textDescriptionBottomSheet"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/textMainDPSCharacterBottomSheet" />
+
+        <ImageView
+            android:id="@+id/imageViewWeaponTypeBottomSheet"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintStart_toEndOf="@+id/txtCharacterWeaponTypeBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/txtCharacterNameBottomSheet"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="85dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Best Set"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/textViewBestWeapon" />
+
+        <TextView
+            android:id="@+id/txtMainEchoBottomSheet"
+            android:layout_width="151dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            android:textColor="@color/gray_500"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Main Echo"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/txtMainEchoBottomSheet" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Best Weapon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/txtCharacterWeaponTypeBottomSheet" />
+
+        <TextView
+            android:id="@+id/textViewBestWeapon"
+            android:layout_width="144dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="30dp"
+    android:elevation="18dp"
     android:background="@drawable/layout_bg">
 
     <TextView
@@ -15,6 +16,7 @@
         android:layout_margin="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins"
         android:text="TextView"
         android:textColor="@color/white"
         android:textStyle="bold"
@@ -27,8 +29,8 @@
 
     <ImageView
         android:id="@+id/imageViewWeapon"
-        android:layout_width="83dp"
-        android:layout_height="68dp"
+        android:layout_width="85dp"
+        android:layout_height="87dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +44,7 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="80dp"
+        android:fontFamily="@font/poppins"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +58,7 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="107dp"
         android:layout_marginBottom="16dp"
+        android:fontFamily="@font/poppins"
         android:scrollbars="vertical"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,6 +74,7 @@
         android:layout_height="22dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/imageViewWeapon"
         app:layout_constraintTop_toBottomOf="@+id/weaponName" />
@@ -80,6 +85,7 @@
         android:layout_height="22dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="52dp"
+        android:fontFamily="@font/poppins"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weaponName" />
@@ -95,5 +101,6 @@
         app:layout_constraintHorizontal_bias="0.959"
         app:layout_constraintStart_toEndOf="@+id/textAtkWeapon"
         app:layout_constraintTop_toBottomOf="@+id/textRarityWeapon"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintVertical_bias="0.533"
+        android:fontFamily="@font/poppins" />
 </androidx.constraintlayout.widget.ConstraintLayout>
