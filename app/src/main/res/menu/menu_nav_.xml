@@ -12,6 +12,11 @@
         android:icon="@drawable/baseline_expand_less_24"
         android:title="@null" />
 
+    <item
+        android:id="@+id/browserMapFragment"
+        android:icon="@drawable/baseline_expand_less_24"
+        android:title="@null" />
+
 <!--    <item-->
 <!--        android:id="@+id/characterFragment"-->
 <!--        android:icon="@drawable/ic_bookmarks"-->

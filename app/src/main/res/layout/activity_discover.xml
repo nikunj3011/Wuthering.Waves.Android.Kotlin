@@ -5,33 +5,34 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wuthering_waves_back"
+    android:background="@drawable/wuthering_dark"
     tools:context=".DiscoverActivity">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="84dp"
-        android:layout_marginBottom="248dp"
-        android:background="#1A1917"
+        android:layout_width="408dp"
+        android:layout_height="56dp"
+        android:background="#001A1917"
         android:backgroundTint="@null"
         android:fontFamily="@font/poppins"
         android:padding="10sp"
-        android:text="Guides"
+        android:text="Guides                  "
         android:textAlignment="viewEnd"
         android:textColor="#FFFFFF"
         android:textColorLink="#FFFFFF"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnGoToHome"
+        android:textSize="16sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="146dp"
-        android:background="#1A1917"
+        android:layout_marginBottom="252dp"
+        android:background="#00FFFEFB"
         android:backgroundTint="@null"
         android:fontFamily="@font/poppins"
         android:padding="10sp"
@@ -39,18 +40,29 @@
         android:textColor="#FFFFFF"
         android:textColorLink="#FFFFFF"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="320dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="31dp"
+        android:background="#917A4E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/btnGoToHome"
         android:layout_width="351dp"
         android:layout_height="75dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="40dp"
         android:fontFamily="@font/poppins"
         android:text="Discover"
         android:textAlignment="viewStart"
@@ -58,67 +70,9 @@
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <HorizontalScrollView
-        android:layout_width="0dp"
-        android:layout_height="128dp"
-        android:layout_marginTop="8dp"
-        android:fadeScrollbars="false"
-        android:scrollbarSize="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnGoToHome"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.442">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="horizontal"
-            android:visibility="invisible">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:backgroundTint="@color/white"
-                android:padding="4dp"
-                android:text="Guidesssssssssssssss"
-                android:textColor="@color/black" />
-
-            <Button
-                android:id="@+id/Co"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:backgroundTint="@color/white"
-                android:padding="4dp"
-                android:text="Characterssssssssssssssssss"
-                android:textColor="@color/black" />
-
-            <Button
-                android:id="@+id/L"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:backgroundTint="@color/white"
-                android:padding="4dp"
-                android:text="Weaponssssssss"
-                android:textColor="@color/black" />
-
-            <Button
-                android:id="@+id/M"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:backgroundTint="@color/white"
-                android:padding="4dp"
-                android:text="Echoesssssss"
-                android:textColor="@color/black" />
-        </LinearLayout>
-    </HorizontalScrollView>
+        app:layout_constraintVertical_bias="0.469" />
 
     <ImageView
         android:id="@+id/imageView2"

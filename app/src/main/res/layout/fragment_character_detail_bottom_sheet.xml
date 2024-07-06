@@ -18,23 +18,24 @@
 
         <ImageView
             android:id="@+id/imageViewCharacterRegionBottomSheet"
-            android:layout_width="105dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="138dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="40dp"
+            android:alpha="0.25"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintHorizontal_bias="0.105"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
         <ImageView
             android:id="@+id/imageViewCharacterBottomSheet"
-            android:layout_width="208dp"
-            android:layout_height="422dp"
-            android:layout_marginTop="4dp"
+            android:layout_width="176dp"
+            android:layout_height="271dp"
+            android:layout_marginTop="132dp"
             android:elevation="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.141"
+            app:layout_constraintHorizontal_bias="0.122"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
@@ -83,7 +84,6 @@
             android:layout_height="28dp"
             android:layout_marginStart="20dp"
             android:layout_marginBottom="36dp"
-            android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -91,12 +91,12 @@
 
         <ImageView
             android:id="@+id/imageViewCharacterElementBottomSheet"
-            android:layout_width="56dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="48dp"
+            android:layout_width="30dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintHorizontal_bias="0.311"
             app:layout_constraintStart_toEndOf="@+id/txtCharacterNameBottomSheet"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
@@ -105,14 +105,12 @@
             android:id="@+id/txtCharacterWeaponTypeBottomSheet"
             android:layout_width="111dp"
             android:layout_height="27dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:text="TextView"
             android:textColor="@color/gray_500"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
             app:layout_constraintTop_toBottomOf="@+id/txtCharacterNameBottomSheet" />
 
         <TextView
@@ -154,7 +152,7 @@
             android:text="TextView"
             android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
-            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+            app:layout_constraintTop_toBottomOf="@+id/txtMainEchoBottomSheet" />
 
         <TextView
             android:id="@+id/textSubDPSCharacterBottomSheet"
@@ -167,7 +165,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/textMainDPSCharacterBottomSheet"
-            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+            app:layout_constraintTop_toBottomOf="@+id/txtMainEchoBottomSheet" />
 
         <TextView
             android:id="@+id/textOverallCharacterBottomSheet"
@@ -199,11 +197,10 @@
             android:id="@+id/imageViewWeaponTypeBottomSheet"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.111"
-            app:layout_constraintStart_toEndOf="@+id/txtCharacterWeaponTypeBottomSheet"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/txtCharacterWeaponTypeBottomSheet"
+            app:layout_constraintHorizontal_bias="0.615"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
             app:layout_constraintTop_toBottomOf="@+id/txtCharacterNameBottomSheet"
             tools:srcCompat="@tools:sample/avatars" />
 
@@ -220,7 +217,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewBestWeapon" />
 
         <TextView
-            android:id="@+id/txtMainEchoBottomSheet"
+            android:id="@+id/txtBestSetBottomSheet"
             android:layout_width="151dp"
             android:layout_height="38dp"
             android:layout_marginStart="8dp"
@@ -240,12 +237,12 @@
             android:layout_marginTop="8dp"
             android:text="Main Echo"
             app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet"
-            app:layout_constraintTop_toBottomOf="@+id/txtMainEchoBottomSheet" />
+            app:layout_constraintTop_toBottomOf="@+id/txtBestSetBottomSheet" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/txtMainEchoBottomSheet"
             android:layout_width="152dp"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_marginStart="8dp"
             android:text="TextView"
             android:textColor="@color/white"
@@ -267,8 +264,8 @@
 
         <TextView
             android:id="@+id/textViewBestWeapon"
-            android:layout_width="144dp"
-            android:layout_height="25dp"
+            android:layout_width="152dp"
+            android:layout_height="38dp"
             android:layout_marginStart="8dp"
             android:text="TextView"
             android:textColor="@color/white"

@@ -48,4 +48,9 @@
         android:name="wutheringwavesguide.ui.info.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/browserMapFragment"
+        android:name="wutheringwavesguide.ui.browsermap.BrowserMapFragment"
+        android:label="fragment_browser_map"
+        tools:layout="@layout/fragment_browser_map" />
 </navigation>

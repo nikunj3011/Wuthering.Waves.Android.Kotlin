@@ -52,7 +52,9 @@ class CharacterDetailBottomSheetFragment :  BottomSheetDialogFragment() {
             binding.textSubDPSCharacterBottomSheet.text = "Sub-DPS  " + character?.rankings?.subDPS
 
 
-            binding.txtMainEchoBottomSheet.text = character?.buildInfoEcho?.echo_sets?.first()?.name
+            binding.txtBestSetBottomSheet.text = character?.buildInfoEcho?.echo_sets?.first()?.name
+            binding.txtMainEchoBottomSheet.text = character?.buildInfoEcho?.echo_sets?.first()?.main_echo
+            binding.textViewBestWeapon.text = character?.buildInfoWeapon?.first()?.weapon
             binding.txtCharacterWeaponTypeBottomSheet.text = character?.weapon.toString()
 
             if(character?.tag != null){
