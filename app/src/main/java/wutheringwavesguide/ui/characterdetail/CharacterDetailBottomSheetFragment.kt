@@ -30,7 +30,7 @@ class CharacterDetailBottomSheetFragment :  BottomSheetDialogFragment() {
 
         characterId = arguments?.getString("characterId").toString()
         if(characterId == null)
-        {
+        { 
             characterId = "1"
         }
         binding = dataBinding
