@@ -17,4 +17,5 @@
     <!-- Dark mode color -->
     <color name="app_bg">#242424</color>
     <color name="app_fg">#FFFFFFFF</color>
+    <color name="goldyellowThird">#917A4E</color>
 </resources>

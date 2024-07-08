@@ -46,17 +46,17 @@ class CharacterDetailBottomSheetFragment :  BottomSheetDialogFragment() {
             binding.textCharacterNameTransparentBottomSheet.text = character?.name.toString()
             binding.textDescriptionBottomSheet.text = character?.introduction?.raw?.content?.first()?.content?.first()?.value
 
-            binding.textMainDPSCharacterBottomSheet.text = "Main DPS  " + character?.rankings?.mainDPS
-            binding.textOverallCharacterBottomSheet.text = "Overall     " + character?.rankings?.overall
-            binding.textSupportCharacterBottomSheet.text = "Support     " + character?.rankings?.support
-            binding.textSubDPSCharacterBottomSheet.text = "Sub-DPS  " + character?.rankings?.subDPS
+            binding.textMainDPSCharacterBottomSheet.text = "Main DPS  S"// + character?.rankings?.mainDPS
+            binding.textOverallCharacterBottomSheet.text = "Overall     S"// + character?.rankings?.overall
+            binding.textSupportCharacterBottomSheet.text = "Support     S" //+ character?.rankings?.support
+            binding.textSubDPSCharacterBottomSheet.text = "Sub-DPS  S" //+ character?.rankings?.subDPS
 
 
             binding.txtBestSetBottomSheet.text = character?.buildInfoEcho?.echo_sets?.first()?.name
             binding.txtMainEchoBottomSheet.text = character?.buildInfoEcho?.echo_sets?.first()?.main_echo
             binding.textViewBestWeapon.text = character?.buildInfoWeapon?.first()?.weapon
             binding.txtCharacterWeaponTypeBottomSheet.text = character?.weapon.toString()
-
+            binding.textCharDesSmall.text = character.region + "_@2024"
             if(character?.tag != null){
                 when (character.tag) {
                     "Aero" -> {
@@ -166,10 +166,16 @@ class CharacterDetailBottomSheetFragment :  BottomSheetDialogFragment() {
                     .load(character.img)
                     .into(binding.imageViewCharacterBottomSheet)
                 if(character.bStyle == "linear-gradient(0deg, rgba(119,61,166,1) -79%, rgba(255,255,255,0) 100%)"){
-                    binding.imageViewCharacterBottomSheet.background = ContextCompat.getDrawable(requireContext(), R.drawable.four_star_gradient)
+                    Glide.with(view)
+                        .load(R.drawable.four_star_flat)
+                        .into(binding.imageViewStarGradient)
+//                    binding.imageViewCharacterBottomSheet.background = ContextCompat.getDrawable(requireContext(), R.drawable.four_star_gradient)
                 }
                 else{
-                    binding.imageViewCharacterBottomSheet.background = ContextCompat.getDrawable(requireContext(), R.drawable.five_star_gradient)
+                    Glide.with(view)
+                        .load(R.drawable.five_star_flat)
+                        .into(binding.imageViewStarGradient)
+//                    binding.imageViewCharacterBottomSheet.background = ContextCompat.getDrawable(requireContext(), R.drawable.five_star_gradient)
                 }
             }
 
