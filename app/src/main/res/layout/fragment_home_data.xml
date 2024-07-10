@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/characterListItemBottomSheet"
-        android:layout_width="413dp"
+        android:layout_width="match_parent"
         android:layout_height="1834dp"
         android:background="@drawable/layout_bg"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,6 +20,7 @@
             android:layout_width="98dp"
             android:layout_height="30dp"
             android:layout_margin="20dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/layout_bg"
             android:elevation="5dp"
             android:text="Elements"
@@ -28,7 +29,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.569"
+            app:layout_constraintHorizontal_bias="0.53"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -44,7 +45,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.573"
+            app:layout_constraintHorizontal_bias="0.544"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -66,12 +67,15 @@
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="396dp"
-            android:layout_height="127dp"
+            android:layout_width="0dp"
+            android:layout_height="154dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
             android:isScrollContainer="true"
             android:nestedScrollingEnabled="true"
             android:overScrollMode="ifContentScrolls"
+            android:padding="10dp"
             android:scrollIndicators="right"
             android:text="Wuthering Waves is a game that features open world exploration with rich and diverse narrative and a high degree of freedom of combat. Players act as Rovers, who awake after a long period of slumber, embark on adventures in the whole wide world made up of new era, new environment and new technology. Wuthering Waves is developed by Kuro Game, the creators of Punishing Gray Raven. The game features the best action RPG combat in the mobile genre and now it will be translated to a open world in the style of Genshin Impact."
             app:layout_constraintEnd_toEndOf="parent"
@@ -104,24 +108,12 @@
             app:srcCompat="@drawable/aero" />
 
         <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="96dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/elementstxtView"
-            app:srcCompat="@drawable/electro" />
-
-        <ImageView
             android:id="@+id/imageView6"
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="28dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.947"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
             app:layout_constraintTop_toBottomOf="@+id/elementstxtView"
             app:srcCompat="@drawable/fusion" />
 
@@ -136,26 +128,13 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
         <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="4dp"
-            android:text="Electro"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-
-        <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="88dp"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="33dp"
+            android:layout_marginEnd="40dp"
             android:text="Fusion"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.68"
-            app:layout_constraintStart_toEndOf="@+id/textView10"
             app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
         <ImageView
@@ -172,22 +151,57 @@
             android:id="@+id/imageView9"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:layout_marginStart="96dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView10"
             app:layout_constraintStart_toEndOf="@+id/imageView8"
             app:layout_constraintTop_toBottomOf="@+id/textView10"
             app:srcCompat="@drawable/havoc" />
 
         <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView6"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/elementstxtView"
+            app:srcCompat="@drawable/electro" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            android:text="Electro"
+            app:layout_constraintEnd_toStartOf="@+id/textView11"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            android:text="Havoc"
+            app:layout_constraintEnd_toStartOf="@+id/textView16"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+        <ImageView
             android:id="@+id/imageView10"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:layout_marginStart="80dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="28dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.687"
-            app:layout_constraintStart_toEndOf="@+id/imageView9"
             app:layout_constraintTop_toBottomOf="@+id/textView11"
             app:srcCompat="@drawable/spectro" />
 
@@ -202,45 +216,46 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
         <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="104dp"
-            android:layout_marginTop="4dp"
-            android:text="Havoc"
-            app:layout_constraintStart_toEndOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
-
-        <TextView
             android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
             android:text="Spectro"
-            app:layout_constraintStart_toEndOf="@+id/textView13"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
         <ImageView
             android:id="@+id/imageView11"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:layout_marginStart="94dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView12"
             app:layout_constraintStart_toEndOf="@+id/imageView13"
             app:layout_constraintTop_toBottomOf="@+id/txtViewWeaponTypes"
             app:srcCompat="@drawable/gauntlets" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="50dp"
+            android:text="Gauntlets"
+            app:layout_constraintEnd_toStartOf="@+id/textView19"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 
         <ImageView
             android:id="@+id/imageView12"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:layout_marginStart="93dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="28dp"
+            android:layout_marginEnd="52dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView11"
             app:layout_constraintTop_toBottomOf="@+id/txtViewWeaponTypes"
             app:srcCompat="@drawable/pistol" />
 
@@ -258,8 +273,8 @@
             android:id="@+id/imageView15"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:layout_marginStart="67dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="12dp"
             app:layout_constraintStart_toEndOf="@+id/imageView14"
             app:layout_constraintTop_toBottomOf="@+id/textView18"
             app:srcCompat="@drawable/sword" />
@@ -285,23 +300,13 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView13" />
 
         <TextView
-            android:id="@+id/textView18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="78dp"
-            android:layout_marginTop="8dp"
-            android:text="Gauntlets"
-            app:layout_constraintStart_toEndOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/imageView11" />
-
-        <TextView
             android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="85dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="64dp"
             android:text="Pistols"
-            app:layout_constraintStart_toEndOf="@+id/textView18"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView12" />
 
         <TextView
@@ -318,12 +323,9 @@
             android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
+            android:layout_marginStart="100dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="160dp"
             android:text="Sword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/textView20"
             app:layout_constraintTop_toBottomOf="@+id/imageView15" />
 
@@ -331,22 +333,35 @@
             android:id="@+id/imageView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView18"
+            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toEndOf="@+id/imageView16"
             app:layout_constraintTop_toBottomOf="@+id/textView7"
             app:srcCompat="@drawable/freezing_frost" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            android:text="Freezing Frost"
+            app:layout_constraintEnd_toStartOf="@+id/textView24"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toEndOf="@+id/textView22"
+            app:layout_constraintTop_toBottomOf="@+id/imageView17" />
 
         <ImageView
             android:id="@+id/imageView18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="28dp"
+            android:layout_marginEnd="32dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView17"
             app:layout_constraintTop_toBottomOf="@+id/textView7"
             app:srcCompat="@drawable/lingering_tunes" />
 
@@ -354,9 +369,9 @@
             android:id="@+id/imageView24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="82dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintStart_toEndOf="@+id/imageView22"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView27"
             app:srcCompat="@drawable/void_thunder" />
 
@@ -364,19 +379,38 @@
             android:id="@+id/imageView22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="87dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView24"
+            app:layout_constraintHorizontal_bias="0.482"
             app:layout_constraintStart_toEndOf="@+id/imageView23"
             app:layout_constraintTop_toBottomOf="@+id/textView26"
             app:srcCompat="@drawable/sun_sinking_eclipse" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="140dp"
+            android:text="Sun-sinking Eclipse"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView30"
+            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintStart_toEndOf="@+id/textView28"
+            app:layout_constraintTop_toBottomOf="@+id/imageView22"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/imageView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintStart_toEndOf="@+id/imageView20"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView24"
             app:srcCompat="@drawable/rejuvenating_glow" />
 
@@ -447,21 +481,13 @@
             android:id="@+id/imageView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="85dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView21"
             app:layout_constraintStart_toEndOf="@+id/imageView19"
             app:layout_constraintTop_toBottomOf="@+id/textView23"
             app:srcCompat="@drawable/moonlight_clouds" />
-
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="8dp"
-            android:text="Freezing Frost"
-            app:layout_constraintStart_toEndOf="@+id/textView22"
-            app:layout_constraintTop_toBottomOf="@+id/imageView17" />
 
         <TextView
             android:id="@+id/textView24"
@@ -471,17 +497,17 @@
             android:layout_marginEnd="32dp"
             android:text="Lingering Tunes"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/textView23"
             app:layout_constraintTop_toBottomOf="@+id/imageView18" />
 
         <TextView
             android:id="@+id/textView26"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
             android:text="Moonlit Clouds"
+            app:layout_constraintEnd_toStartOf="@+id/textView27"
             app:layout_constraintStart_toEndOf="@+id/textView25"
             app:layout_constraintTop_toBottomOf="@+id/imageView20" />
 
@@ -489,41 +515,22 @@
             android:id="@+id/textView27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="86dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:text="Rejuvenation Glow"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.946"
-            app:layout_constraintStart_toEndOf="@+id/textView26"
             app:layout_constraintTop_toBottomOf="@+id/imageView21" />
-
-        <TextView
-            android:id="@+id/textView29"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="70dp"
-            android:text="Sun-sinking Eclipse"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView28"
-            app:layout_constraintTop_toBottomOf="@+id/imageView22"
-            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="86dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="33dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginBottom="70dp"
             android:text="Void Thunder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.885"
-            app:layout_constraintStart_toEndOf="@+id/textView29"
             app:layout_constraintTop_toBottomOf="@+id/imageView24"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -554,36 +561,30 @@
             android:id="@+id/view2"
             android:layout_width="4dp"
             android:layout_height="30dp"
-            android:layout_marginStart="36dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
             android:background="@color/goldyellowThird"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.356"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/elementstxtView"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <View
             android:id="@+id/view3"
             android:layout_width="4dp"
             android:layout_height="30dp"
-            android:layout_marginStart="36dp"
             android:layout_marginTop="28dp"
+            android:layout_marginEnd="12dp"
             android:background="@color/goldyellowThird"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.297"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView7"
             app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
         <View
             android:id="@+id/view4"
             android:layout_width="4dp"
             android:layout_height="30dp"
-            android:layout_marginStart="36dp"
             android:layout_marginTop="28dp"
+            android:layout_marginEnd="12dp"
             android:background="@color/goldyellowThird"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.356"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtViewWeaponTypes"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,6 +29,7 @@ class BrowserMapFragment : Fragment() {
 //        startActivity(browserIntent)
         binding = dataBinding
         binding.webViewMap.webViewClient = WebViewClient()
+        binding.webViewMap.settings.javaScriptEnabled = true
 //        binding.webViewMap.loadUrl("https://wuthering.gg/map")
         binding.webViewMap.loadUrl("https://mapgenie.io/wuthering-waves/maps/solaris-3")
         return binding.root

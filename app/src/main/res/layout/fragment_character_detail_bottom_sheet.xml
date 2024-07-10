@@ -10,11 +10,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/characterListItemBottomSheet"
-        android:layout_width="413dp"
+        android:layout_width="match_parent"
         android:layout_height="1134dp"
+        android:background="@drawable/layout_bg"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/layout_bg">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageViewCharacterRegionBottomSheet"
@@ -30,8 +30,8 @@
 
         <ImageView
             android:id="@+id/imageViewCharacterBottomSheet"
-            android:layout_width="302dp"
-            android:layout_height="456dp"
+            android:layout_width="301dp"
+            android:layout_height="408dp"
             android:layout_marginTop="136dp"
             android:alpha="0.7"
             android:elevation="-2dp"
@@ -79,18 +79,25 @@
             android:id="@+id/imageViewCharacterElementBottomSheet"
             android:layout_width="30dp"
             android:layout_height="26dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="88dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/txtCharacterNameBottomSheet"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/textDescriptionBottomSheet"
-            android:layout_width="359dp"
+            android:layout_width="0dp"
             android:layout_height="191dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="650dp"
+            android:paddingRight="10dp"
             android:text="TextView"
+            android:textAlignment="viewStart"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -112,8 +119,6 @@
             android:textColor="@color/white"
             android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.486"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -135,7 +140,7 @@
             android:id="@+id/txtCharacterWeaponTypeBottomSheet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="144dp"
             android:fontFamily="@font/poppins"
             android:rotation="270"
@@ -150,8 +155,8 @@
 
         <TextView
             android:id="@+id/textViewBestWeapon"
-            android:layout_width="152dp"
-            android:layout_height="38dp"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/poppins"
@@ -163,31 +168,27 @@
 
         <TextView
             android:id="@+id/textView14"
-            android:layout_width="104dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="3dp"
+            android:layout_width="110dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="4dp"
             android:fontFamily="@font/poppins"
             android:gravity="right"
             android:text="Best Set "
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.928"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewCharacterBottomSheet" />
 
         <TextView
             android:id="@+id/txtBestSetBottomSheet"
-            android:layout_width="243dp"
+            android:layout_width="wrap_content"
             android:layout_height="31dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="3dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
             android:text="TextView"
-            android:textAlignment="textEnd"
+            android:textAlignment="viewEnd"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.868"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
         <TextView
@@ -199,8 +200,6 @@
             android:fontFamily="@font/poppins"
             android:text="TextView"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.015"
             app:layout_constraintStart_toEndOf="@+id/textMainDPSCharacterBottomSheet"
             app:layout_constraintTop_toBottomOf="@+id/txtMainEchoBottomSheet" />
 
@@ -226,8 +225,6 @@
             android:text="TextView"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/textDescriptionBottomSheet"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.015"
             app:layout_constraintStart_toEndOf="@+id/textSupportCharacterBottomSheet"
             app:layout_constraintTop_toBottomOf="@+id/textSubDPSCharacterBottomSheet"
             app:layout_constraintVertical_bias="0.0" />
@@ -259,8 +256,8 @@
 
         <TextView
             android:id="@+id/txtMainEchoBottomSheet"
-            android:layout_width="163dp"
-            android:layout_height="46dp"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/poppins"
@@ -270,12 +267,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
+
         <ImageView
             android:id="@+id/imageViewWeaponTypeBottomSheet"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="84dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="80dp"
             android:rotation="270"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtCharacterWeaponTypeBottomSheet"
@@ -286,12 +284,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/poppins"
             android:text="Best Weapon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewCharacterBottomSheet" />
-
 
         <ImageView
             android:id="@+id/imageViewStarGradient"
