@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
@@ -16,11 +17,13 @@ import wutheringwavesguide.binding.HomeViewPagerAdapter
 import wutheringwavesguide.databinding.FragmentEchoBinding
 import wutheringwavesguide.databinding.FragmentHomeBinding
 import wutheringwavesguide.databinding.FragmentWeaponBinding
+import wutheringwavesguide.models.api.character.CharacterResponseItem
 import wutheringwavesguide.models.api.echo.EchoesResponseItem
 import wutheringwavesguide.models.api.weapon.WeaponResponseItem
 import wutheringwavesguide.ui.common.EchoListAdapter
 import wutheringwavesguide.ui.common.WeaponListAdapter
 import wutheringwavesguide.util.autoCleared
+import java.util.Locale
 
 
 class WeaponFragment : Fragment() {
@@ -47,7 +50,38 @@ class WeaponFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var response = viewModel.weaponsLiveData
         binding.weaponRecyclerView.layoutManager = LinearLayoutManager(requireActivity())
+        binding.searchWeaponView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                filterList(newText)
+                return true
+            }
+
+        })
         initRecyclerView()
+    }
+
+    private fun filterList(query: String?) {
+        if (query != null) {
+            viewModel.weaponsLiveData.observe(viewLifecycleOwner) { result ->
+
+                val filteredList = ArrayList<WeaponResponseItem>()
+                for (i in result) {
+                    if (i.name.lowercase(Locale.ROOT).contains(query)) {
+                        filteredList.add(i)
+                    }
+                }
+
+                if (filteredList.isEmpty()) {
+                    Toast.makeText(requireContext(), "No Data found", Toast.LENGTH_SHORT).show()
+                } else {
+                    weaponsAdapter.setFilteredList(filteredList)
+                }
+            }
+        }
     }
 
     private fun initRecyclerView() {

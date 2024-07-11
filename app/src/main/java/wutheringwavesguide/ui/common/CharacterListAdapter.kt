@@ -1,8 +1,12 @@
 package wutheringwavesguide.ui.common
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
+import android.view.View.OnLongClickListener
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -11,10 +15,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import wutheringwavesguide.R
 import wutheringwavesguide.models.api.character.CharacterResponseItem
+import java.util.Timer
+import kotlin.concurrent.schedule
+
 
 class CharacterListAdapter(
     private val contextCharacter: Context,
-    private val fruitsList:List<CharacterResponseItem>,
+    private var fruitsList:List<CharacterResponseItem>,
     private val clickListener:(CharacterResponseItem)->Unit
 ) : RecyclerView.Adapter<MyViewHolder3>(){
 
@@ -29,17 +36,24 @@ class CharacterListAdapter(
         holder.bind(contextCharacter, fruit,clickListener)
     }
 
+    fun setFilteredList(mList: List<CharacterResponseItem>){
+        this.fruitsList = mList
+        notifyDataSetChanged()
+    }
+
     override fun getItemCount(): Int {
         return fruitsList.size
     }
 
 }
-
 class MyViewHolder3(val view: View):RecyclerView.ViewHolder(view){
+    private var touchRelease : Boolean = false
+    @SuppressLint("ClickableViewAccessibility")
     fun bind(contextCharacter: Context, character: CharacterResponseItem, clickListener:(CharacterResponseItem)->Unit) {
         val characterTextView = view.findViewById<TextView>(R.id.characterName)
         characterTextView.text = character.name
-
+        val characterView = view.findViewById<RecyclerView>(R.id.characterRecyclerView)
+//        characterView?.background = ContextCompat.getDrawable(contextCharacter, R.drawable.four_star_gradient)
 //        val rarityTextView = view.findViewById<TextView>(R.id.textCharacterWeapon)
 //        rarityTextView.text = "Weapon: BroadBlade"
 //
@@ -107,8 +121,43 @@ class MyViewHolder3(val view: View):RecyclerView.ViewHolder(view){
             }
         }
 
-        view.setOnClickListener {
-            clickListener(character)
+//        view.setOnClickListener {
+//            clickListener(character)
+//            Timer().schedule(100) {
+//                view.background = ContextCompat.getDrawable(contextCharacter, R.drawable.layout_bg)
+//            }
+//        }
+//
+//        view.setOnLongClickListener(OnLongClickListener {
+//            view.background =  ContextCompat.getDrawable(contextCharacter, R.drawable.translucent_black)
+//            clickListener(character)
+//            Timer().schedule(100) {
+//            }
+//            true
+//        })
+//        view.setOnTouchListener(object : View.OnTouchListener {
+//            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+//                when (event?.action) {
+//                    MotionEvent.ACTION_DOWN -> {
+//                        view.background =  ContextCompat.getDrawable(contextCharacter, R.drawable.translucent_black)
+//                    }
+//                    MotionEvent.AXIS_X -> {
+//                        view.performClick()
+//                        view.background = ContextCompat.getDrawable(contextCharacter, R.drawable.layout_bg)
+//                        clickListener(character)
+//                    }
+//                }
+//                return v?.onTouchEvent(event) ?: true
+//            }
+//        })
+        view.setOnTouchListener { view, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                view.background =  ContextCompat.getDrawable(contextCharacter, R.drawable.translucent_black)
+            } else if (event.action == MotionEvent.ACTION_UP) {
+                view.background = ContextCompat.getDrawable(contextCharacter, R.drawable.layout_bg)
+                clickListener(character)
+            }
+            true
         }
     }
 }

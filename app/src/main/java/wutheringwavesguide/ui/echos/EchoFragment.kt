@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.Transformation
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,11 +20,13 @@ import wutheringwavesguide.binding.HomeViewPagerAdapter
 import wutheringwavesguide.databinding.FragmentBookmarksBinding
 import wutheringwavesguide.databinding.FragmentEchoBinding
 import wutheringwavesguide.databinding.FragmentHomeBinding
+import wutheringwavesguide.models.api.character.CharacterResponseItem
 import wutheringwavesguide.models.api.echo.EchoesResponseItem
 import wutheringwavesguide.ui.bookmarks.BookmarksFragmentDirections
 import wutheringwavesguide.ui.common.EchoListAdapter
 import wutheringwavesguide.ui.common.NewsListAdapter
 import wutheringwavesguide.util.autoCleared
+import java.util.Locale
 
 
 class EchoFragment : Fragment() {
@@ -51,7 +54,38 @@ class EchoFragment : Fragment() {
         var response = viewModel.echoesLiveData
         binding.echoRecyclerView.layoutManager = LinearLayoutManager(requireActivity())
 
+        binding.searchEchoView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                filterList(newText)
+                return true
+            }
+
+        })
         initRecyclerView()
+    }
+
+    private fun filterList(query: String?) {
+        if (query != null) {
+            viewModel.echoesLiveData.observe(viewLifecycleOwner) { result ->
+
+                val filteredList = ArrayList<EchoesResponseItem>()
+                for (i in result) {
+                    if (i.name.lowercase(Locale.ROOT).contains(query)) {
+                        filteredList.add(i)
+                    }
+                }
+
+                if (filteredList.isEmpty()) {
+                    Toast.makeText(requireContext(), "No Data found", Toast.LENGTH_SHORT).show()
+                } else {
+                    echosAdapter.setFilteredList(filteredList)
+                }
+            }
+        }
     }
 
     private fun initRecyclerView() {

@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -21,6 +23,7 @@ import wutheringwavesguide.models.api.character.CharacterResponseItem
 import wutheringwavesguide.ui.characterdetail.CharacterDetailBottomSheetFragment
 import wutheringwavesguide.ui.common.CharacterListAdapter
 import wutheringwavesguide.util.autoCleared
+import java.util.Locale
 import java.util.Objects
 
 
@@ -43,11 +46,41 @@ class CharacterFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var response = viewModel.charactersLiveData
         binding.characterRecyclerView.layoutManager = GridLayoutManager(context, 2)
+        binding.searchCharacterView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                filterList(newText)
+                return true
+            }
+
+        })
         initRecyclerView()
+    }
+
+    private fun filterList(query: String?) {
+        if (query != null) {
+            viewModel.charactersLiveData.observe(viewLifecycleOwner) { result ->
+
+                val filteredList = ArrayList<CharacterResponseItem>()
+                for (i in result) {
+                    if (i.name.lowercase(Locale.ROOT).contains(query)) {
+                        filteredList.add(i)
+                    }
+                }
+
+                if (filteredList.isEmpty()) {
+                    Toast.makeText(requireContext(), "No Data found", Toast.LENGTH_SHORT).show()
+                } else {
+                    characterAdapter.setFilteredList(filteredList)
+                }
+            }
+        }
     }
 
     private fun initRecyclerView() {

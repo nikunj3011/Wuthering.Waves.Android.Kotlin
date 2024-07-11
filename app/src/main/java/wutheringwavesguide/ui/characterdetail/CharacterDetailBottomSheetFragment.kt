@@ -4,20 +4,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.core.content.ContextCompat
+import android.view.Window
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import wutheringwavesguide.R
 import wutheringwavesguide.databinding.FragmentCharacterDetailBottomSheetBinding
+
 
 class CharacterDetailBottomSheetFragment :  BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentCharacterDetailBottomSheetBinding
     private val viewModel by viewModel<CharacterDetailsViewModel>()
     private lateinit var characterId : String
-
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
+        super.onCreate(savedInstanceState)
+//        setStyle(BottomSheetDialogFragment.STYLE_NORMAL, com.google.android.material.R.style.Animation_Material3_BottomSheetDialog);
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,17 +34,43 @@ class CharacterDetailBottomSheetFragment :  BottomSheetDialogFragment() {
             false
         )
 
+//        val window: Window = context.win
+//        window.setBackgroundDrawableResource(android.R.color.transparent)
+//        val lp = window.attributes
+//        lp.alpha = 1.0f
+//        lp.dimAmount = 0.0f
+//        window.attributes = lp
         characterId = arguments?.getString("characterId").toString()
         if(characterId == null)
         {
             characterId = "1"
         }
         binding = dataBinding
+        view?.parent
         // Inflate the layout for this fragment
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        val bottomSheet : ConstraintLayout = dialog?.findViewById(R.id.characterListItemBottomSheet)!!
+//
+//        // Height of the view
+//        bottomSheet.layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
+//
+//        // Behavior of the bottom sheet
+//        val behavior = BottomSheetBehavior.from(bottomSheet)
+//        behavior.apply {
+//            peekHeight = resources.displayMetrics.heightPixels // Pop-up height
+//            state = BottomSheetBehavior.STATE_EXPANDED // Expanded state
+//
+//            addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+//                override fun onStateChanged(bottomSheet: View, newState: Int) {
+//                }
+//
+//                override fun onSlide(bottomSheet: View, slideOffset: Float) {}
+//            })
+//        }
+
         viewModel.id = characterId
         viewModel.characterDetailsLiveData.observe(viewLifecycleOwner) { result ->
             var character = result
@@ -56,7 +88,7 @@ class CharacterDetailBottomSheetFragment :  BottomSheetDialogFragment() {
             binding.txtMainEchoBottomSheet.text = character?.buildInfoEcho?.echo_sets?.first()?.main_echo
             binding.textViewBestWeapon.text = character?.buildInfoWeapon?.first()?.weapon
             binding.txtCharacterWeaponTypeBottomSheet.text = character?.weapon.toString()
-            binding.textCharDesSmall.text = character.region + "_@2024"
+            binding.textCharDesSmall.text = character?.region + "_@2024"
             if(character?.tag != null){
                 when (character.tag) {
                     "Aero" -> {

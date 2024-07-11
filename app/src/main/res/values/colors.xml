@@ -13,6 +13,7 @@
     <color name="gray_500">#FFA9A9A9</color>
     <color name="gray_700">#FF707070</color>
     <color name="gray_transparent">#11707070</color>
+    <color name="transparent">#00000000</color>
 
     <!-- Dark mode color -->
     <color name="app_bg">#242424</color>

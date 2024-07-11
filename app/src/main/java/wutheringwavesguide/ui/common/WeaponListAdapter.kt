@@ -11,11 +11,12 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import wutheringwavesguide.R
+import wutheringwavesguide.models.api.character.CharacterResponseItem
 import wutheringwavesguide.models.api.weapon.WeaponResponseItem
 
 class WeaponListAdapter (
     private val contextWeapon: Context,
-    private val weaponsList:List<WeaponResponseItem>,
+    private var weaponsList:List<WeaponResponseItem>,
     private val clickListener:(WeaponResponseItem)->Unit
     ) : RecyclerView.Adapter<MyViewHolder2>(){
 
@@ -28,6 +29,11 @@ class WeaponListAdapter (
         override fun onBindViewHolder(holder: MyViewHolder2, position: Int) {
             val weapon = weaponsList[position]
             holder.bind(contextWeapon, weapon, clickListener)
+        }
+
+        fun setFilteredList(mList: List<WeaponResponseItem>){
+            this.weaponsList = mList
+            notifyDataSetChanged()
         }
 
         override fun getItemCount(): Int {

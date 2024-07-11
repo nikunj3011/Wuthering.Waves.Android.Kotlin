@@ -15,12 +15,13 @@ import com.bumptech.glide.Glide
 import wutheringwavesguide.R
 import wutheringwavesguide.databinding.LayoutCategoryItemBinding
 import wutheringwavesguide.databinding.LayoutEchoListBinding
+import wutheringwavesguide.models.api.character.CharacterResponseItem
 import wutheringwavesguide.models.api.echo.EchoesResponseItem
 
 
 class EchoListAdapter(
     private val contextEcho: Context,
-    private val fruitsList:List<EchoesResponseItem>,
+    private var fruitsList:List<EchoesResponseItem>,
     private val clickListener:(EchoesResponseItem)->Unit
 ) : RecyclerView.Adapter<MyViewHolder>(){
 
@@ -33,6 +34,11 @@ class EchoListAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val fruit = fruitsList[position]
         holder.bind(contextEcho, fruit, clickListener)
+    }
+
+    fun setFilteredList(mList: List<EchoesResponseItem>){
+        this.fruitsList = mList
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
