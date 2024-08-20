@@ -15,9 +15,50 @@
             name="echoes"
             type="LiveData&lt;List&lt;WeaponResponseItem>>" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerFrameLayoutWeapon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchWeaponView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchWeaponView"
@@ -41,6 +82,7 @@
             android:layout_marginStart="1dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="110dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

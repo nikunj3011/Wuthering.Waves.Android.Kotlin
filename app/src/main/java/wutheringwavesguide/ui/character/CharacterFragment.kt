@@ -1,30 +1,23 @@
 package wutheringwavesguide.ui.character
 
-import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.button.MaterialButton
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import wutheringwavesguide.databinding.FragmentCharacterBinding
-import wutheringwavesguide.databinding.FragmentCharacterDetailBottomSheetBinding
 import wutheringwavesguide.models.api.character.CharacterResponseItem
 import wutheringwavesguide.ui.characterdetail.CharacterDetailBottomSheetFragment
 import wutheringwavesguide.ui.common.CharacterListAdapter
 import wutheringwavesguide.util.autoCleared
 import java.util.Locale
-import java.util.Objects
 
 
 class CharacterFragment : Fragment() {
@@ -43,6 +36,8 @@ class CharacterFragment : Fragment() {
             false
         )
         binding = dataBinding
+        binding.shimmerFrameLayoutCharacter.startShimmer()
+        binding.characterRecyclerView.setVisibility(View.GONE)
         return binding.root
     }
 
@@ -55,22 +50,44 @@ class CharacterFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                filterList(newText)
+                filterList(newText, false)
                 return true
             }
-
         })
-        initRecyclerView()
+        binding.imageViewaero.setOnClickListener(View.OnClickListener {filterList("aero", true)})
+        binding.imageViewhavoc.setOnClickListener(View.OnClickListener {filterList("havoc", true)})
+        binding.imageViewfusion.setOnClickListener(View.OnClickListener {filterList("fusion", true)})
+        binding.imageViewglacio.setOnClickListener(View.OnClickListener {filterList("glacio", true)})
+        binding.imageViewspectro.setOnClickListener(View.OnClickListener {filterList("spectro", true)})
+        binding.imageViewelectro.setOnClickListener(View.OnClickListener {filterList("electro", true)})
+        binding.imageViewfilteroff.setOnClickListener(View.OnClickListener {filterList("", false)
+            binding.searchCharacterView.setQuery("", true)})
+
+        viewModel.viewModelScope.launch {
+            initRecyclerView()
+            delay(500)
+            binding.shimmerFrameLayoutCharacter.setVisibility(View.GONE)
+            binding.characterRecyclerView.setVisibility(View.VISIBLE)
+        }
     }
 
-    private fun filterList(query: String?) {
+    private fun filterList(query: String?, isElement: Boolean) {
         if (query != null) {
             viewModel.charactersLiveData.observe(viewLifecycleOwner) { result ->
 
                 val filteredList = ArrayList<CharacterResponseItem>()
-                for (i in result) {
-                    if (i.name.lowercase(Locale.ROOT).contains(query)) {
-                        filteredList.add(i)
+                if(isElement){
+                    for (i in result) {
+                        if (i.tag.lowercase(Locale.ROOT).contains(query)) {
+                            filteredList.add(i)
+                        }
+                    }
+                }
+                else{
+                    for (i in result) {
+                        if (i.name.lowercase(Locale.ROOT).contains(query)) {
+                            filteredList.add(i)
+                        }
                     }
                 }
 

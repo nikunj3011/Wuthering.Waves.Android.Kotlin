@@ -68,7 +68,7 @@
         <TextView
             android:id="@+id/textView8"
             android:layout_width="0dp"
-            android:layout_height="154dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="10dp"
@@ -586,6 +586,31 @@
             android:background="@color/goldyellowThird"
             app:layout_constraintEnd_toStartOf="@+id/txtViewWeaponTypes"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+        <ImageView
+            android:id="@+id/imageViewTip"
+            android:layout_width="36dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_coffee_24" />
+
+
+        <TextView
+            android:id="@+id/textView88"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/layout_bg"
+            android:elevation="5dp"
+            android:text="Support"
+            android:textColor="@color/goldyellowThird"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewTip" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -10,11 +10,14 @@ import android.view.animation.Transformation
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import wutheringwavesguide.binding.HomeViewPagerAdapter
 import wutheringwavesguide.databinding.FragmentBookmarksBinding
@@ -46,6 +49,8 @@ class EchoFragment : Fragment() {
         )
         binding = dataBinding
 
+        binding.shimmerFrameLayoutEcho.startShimmer()
+        binding.echoRecyclerView.setVisibility(View.GONE)
         return binding.root
     }
 
@@ -65,7 +70,12 @@ class EchoFragment : Fragment() {
             }
 
         })
-        initRecyclerView()
+        viewModel.viewModelScope.launch {
+            initRecyclerView()
+            delay(500)
+            binding.shimmerFrameLayoutEcho.setVisibility(View.GONE)
+            binding.echoRecyclerView.setVisibility(View.VISIBLE)
+        }
     }
 
     private fun filterList(query: String?) {
@@ -101,6 +111,7 @@ class EchoFragment : Fragment() {
                 itemAnimator?.changeDuration = 0
             }
         }
+
     }
 
     private fun listItemClicked(fruit: EchoesResponseItem){

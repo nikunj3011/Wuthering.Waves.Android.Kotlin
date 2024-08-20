@@ -1,19 +1,18 @@
 package wutheringwavesguide.ui.homedata
 
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import wutheringwavesguide.R
-import wutheringwavesguide.databinding.FragmentEchoBinding
 import wutheringwavesguide.databinding.FragmentHomeDataBinding
-import wutheringwavesguide.ui.echos.EchoViewModel
 import wutheringwavesguide.util.autoCleared
+
 
 class HomeDataFragment : Fragment() {
 
@@ -36,14 +35,22 @@ class HomeDataFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        binding.imageViewTip.setOnClickListener(View.OnClickListener {
+            val uri = Uri.parse("https://ko-fi.com/nikunj3011") // missing 'http://' will cause crashed
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+        })
 
         binding.webViewIntroVideoHome.webViewClient = WebViewClient()
         binding.webViewIntroVideoHome.settings.javaScriptEnabled = true
-        binding.webViewIntroVideoHome.loadData("<iframe width=\"380\" height=\"190\" src=\"https://www.youtube.com/embed/R8htow_6tRc?si=jNrcgc4MmC8IATSN&amp;start=2\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+//        binding.webViewIntroVideoHome.loadData("<iframe width=\"380\" height=\"190\" src=\"https://www.youtube.com/embed/SJLCoNsFYfY&amp;start=2\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+//            "text/html", "utf-8")
+
+        binding.webViewIntroVideoHome.loadData("<div style=\"position:relative;padding-bottom:56.25%;height:0;overflow:hidden;\"> <iframe style=\"width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden\" frameborder=\"0\" type=\"text/html\" src=\"https://www.dailymotion.com/embed/video/x8vzw44\" width=\"100%\" height=\"100%\" allowfullscreen title=\"Dailymotion Video Player\" > </iframe> </div>",
             "text/html", "utf-8")
         binding.webViewIntroVideoHome.setBackgroundColor(Color.BLACK)
 
-        binding.webViewIntroVideoHome.performClick()
+//        binding.webViewIntroVideoHome.performClick()
 //        binding.webViewIntroVideoHome.set = WebView(requireContext()).apply {
 //            settings.javaScriptEnabled = true
 //            settings.loadWithOverviewMode = true

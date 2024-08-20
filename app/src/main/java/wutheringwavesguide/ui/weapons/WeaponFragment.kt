@@ -8,10 +8,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import wutheringwavesguide.binding.HomeViewPagerAdapter
 import wutheringwavesguide.databinding.FragmentEchoBinding
@@ -43,6 +46,9 @@ class WeaponFragment : Fragment() {
         )
         binding = dataBinding
 
+        binding.shimmerFrameLayoutWeapon.startShimmer()
+        binding.weaponRecyclerView.setVisibility(View.GONE)
+
         return binding.root
     }
 
@@ -61,7 +67,12 @@ class WeaponFragment : Fragment() {
             }
 
         })
-        initRecyclerView()
+        viewModel.viewModelScope.launch {
+            initRecyclerView()
+            delay(500)
+            binding.shimmerFrameLayoutWeapon.setVisibility(View.GONE)
+            binding.weaponRecyclerView.setVisibility(View.VISIBLE)
+        }
     }
 
     private fun filterList(query: String?) {

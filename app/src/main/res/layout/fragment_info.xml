@@ -17,7 +17,7 @@
         android:fontFamily="@font/poppins"
         android:text="AS WUTHERING WAVES ECHO ENDLESSLY, MANKIND SET SAIL ON A NEW JOURNEY"
         android:textColor="#FFF"
-        android:textSize="55sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"

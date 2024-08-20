@@ -15,7 +15,7 @@ import wutheringwavesguide.R
 
 class InfoFragment : Fragment() {
 
-    private val InterAd = "ca-app-pub-8299128249632072/3313271773"
+    private val InterAd = "ca-app-pub-8299128249632072/6166990190"
     private var mInterstitialAd: InterstitialAd? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import wutheringwavesguide.R
 import wutheringwavesguide.databinding.LayoutCategoryItemBinding
 import wutheringwavesguide.databinding.LayoutEchoListBinding
@@ -65,20 +66,54 @@ class MyViewHolder(val view: View):RecyclerView.ViewHolder(view){
         descriptionTextView.movementMethod = ScrollingMovementMethod()
         descriptionTextView.text = echo.description
 
-        descriptionTextView.setOnClickListener {
-            if(true)
-                descriptionTextView.expand(300)
-            else
-                descriptionTextView.collapse(300)
-        }
         val setsTextView = view.findViewById<TextView>(R.id.textSets)
-        setsTextView.text =  "Sets: " + echo.cost
+        var sets = "Best Sets: "
+        for (values in echo.echoSets){
+            sets = " " + sets + values.name + ", "
+        }
+        setsTextView.text = sets
+
+        var count = 1
+//        val echoImageView1 = view.findViewById<ImageView>(R.id.imageViewEchoSet1)
+//        val echoImageView2 = view.findViewById<ImageView>(R.id.imageViewEchoSet1)
+//        val echoImageView3 = view.findViewById<ImageView>(R.id.imageViewEchoSet1)
+//        val echoImageView4 = view.findViewById<ImageView>(R.id.imageViewEchoSet1)
+
+//        while(count != echo.echoSets.count()){
+//            when (count) {
+//                1 -> {
+////                    echoImageView1.background = ContextCompat.getDrawable(contextEcho, R.drawable.find)
+//                }
+//                2 -> {
+//                    Glide.with(view)
+//                        .load(echo.img)
+//                        .into(echoImageView2)
+//                }
+//                3 -> {
+//                    Glide.with(view)
+//                        .load(echo.img)
+//                        .into(echoImageView3)
+//                }
+//                4 -> {
+//                    Glide.with(view)
+//                        .load(echo.img)
+//                        .into(echoImageView4)
+//                }
+//                else -> {
+//                    Glide.with(view)
+//                        .load(echo.img)
+//                        .into(echoImageView4)
+//                }
+//            }
+//            count++
+//        }
 
         val echoImageView = view.findViewById<ImageView>(R.id.imageView)
         if(echo.img != null)
         {
             Glide.with(view)
                 .load(echo.img)
+                .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
                 .into(echoImageView)
 
             when (echo.classEcho) {
@@ -105,51 +140,51 @@ class MyViewHolder(val view: View):RecyclerView.ViewHolder(view){
 //        }
     }
 
-
-
-    fun View.expand(duration: Long) {
-        val initialHeight = this.measuredHeight
-        val matchParentMeasureSpec = View.MeasureSpec.makeMeasureSpec((this.parent as View).width, View.MeasureSpec.EXACTLY)
-        val wrapContentMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
-        this.measure(matchParentMeasureSpec, wrapContentMeasureSpec)
-        val targetHeight = this.measuredHeight
-
-        this.layoutParams.height = initialHeight
-        this.visibility = View.VISIBLE
-        val a: Animation = object : Animation() {
-            override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
-                this@expand.layoutParams.height = if (interpolatedTime == 1.0f) ViewGroup.LayoutParams.WRAP_CONTENT else (initialHeight + ((targetHeight - initialHeight) * interpolatedTime)).toInt()
-                this@expand.requestLayout()
-            }
-
-            override fun willChangeBounds(): Boolean {
-                return true
-            }
-        }
-
-
-        a.duration = duration
-        this.startAnimation(a)
-    }
-
-    fun View.collapse(duration: Long) {
-        val initialHeight = this.measuredHeight
-        val a: Animation = object : Animation() {
-            override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
-                if (interpolatedTime == 1.0f) {
-                    this@collapse.visibility = View.GONE
-                } else {
-                    this@collapse.layoutParams.height = initialHeight - (initialHeight * interpolatedTime).toInt()
-                    this@collapse.requestLayout()
-                }
-            }
-
-            override fun willChangeBounds(): Boolean {
-                return true
-            }
-        }
-
-        a.duration = duration
-        this@collapse.startAnimation(a)
-    }
+//
+//
+//    fun View.expand(duration: Long) {
+//        val initialHeight = this.measuredHeight
+//        val matchParentMeasureSpec = View.MeasureSpec.makeMeasureSpec((this.parent as View).width, View.MeasureSpec.EXACTLY)
+//        val wrapContentMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+//        this.measure(matchParentMeasureSpec, wrapContentMeasureSpec)
+//        val targetHeight = this.measuredHeight
+//
+//        this.layoutParams.height = initialHeight
+//        this.visibility = View.VISIBLE
+//        val a: Animation = object : Animation() {
+//            override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
+//                this@expand.layoutParams.height = if (interpolatedTime == 1.0f) ViewGroup.LayoutParams.WRAP_CONTENT else (initialHeight + ((targetHeight - initialHeight) * interpolatedTime)).toInt()
+//                this@expand.requestLayout()
+//            }
+//
+//            override fun willChangeBounds(): Boolean {
+//                return true
+//            }
+//        }
+//
+//
+//        a.duration = duration
+//        this.startAnimation(a)
+//    }
+//
+//    fun View.collapse(duration: Long) {
+//        val initialHeight = this.measuredHeight
+//        val a: Animation = object : Animation() {
+//            override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
+//                if (interpolatedTime == 1.0f) {
+//                    this@collapse.visibility = View.GONE
+//                } else {
+//                    this@collapse.layoutParams.height = initialHeight - (initialHeight * interpolatedTime).toInt()
+//                    this@collapse.requestLayout()
+//                }
+//            }
+//
+//            override fun willChangeBounds(): Boolean {
+//                return true
+//            }
+//        }
+//
+//        a.duration = duration
+//        this@collapse.startAnimation(a)
+//    }
 }

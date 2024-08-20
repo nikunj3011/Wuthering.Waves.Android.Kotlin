@@ -15,23 +15,63 @@
             name="echoes"
             type="LiveData&lt;List&lt;CharacterResponseItem>>" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerFrameLayoutCharacter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchCharacterView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+
+                <include layout="@layout/layout_news_item_shimmer" />
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchCharacterView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="4dp"
             android:layout_marginEnd="12dp"
             android:background="@color/darkGrayBackground"
             android:elevation="5dp"
             app:iconifiedByDefault="false"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewspectro"
             app:queryBackground="@android:color/transparent" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -41,11 +81,89 @@
             android:layout_marginStart="1dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="110dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/searchCharacterView"
-            app:spanCount="3" />
+            app:spanCount="3">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+        <ImageView
+            android:id="@+id/imageViewaero"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/aero"
+            app:layout_constraintStart_toEndOf="@+id/imageViewelectro"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewelectro"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/electro"
+            app:layout_constraintStart_toEndOf="@+id/imageViewfusion"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewfusion"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/fusion"
+            app:layout_constraintStart_toEndOf="@+id/imageViewglacio"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewglacio"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/glacio"
+            app:layout_constraintStart_toEndOf="@+id/imageViewhavoc"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewhavoc"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/havoc"
+            app:layout_constraintStart_toEndOf="@+id/imageViewspectro"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewspectro"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/spectro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imageViewfilteroff"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/baseline_filter_list_off_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewaero"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

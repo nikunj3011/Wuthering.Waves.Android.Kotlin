@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import wutheringwavesguide.R
 import wutheringwavesguide.models.api.character.CharacterResponseItem
 import wutheringwavesguide.models.api.weapon.WeaponResponseItem
@@ -67,6 +68,7 @@ class WeaponListAdapter (
             if(weapon.img != null){
                 Glide.with(view)
                     .load(weapon.img)
+                    .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
                     .into(echoImageView)
 
                 when (weapon.rarityDes) {

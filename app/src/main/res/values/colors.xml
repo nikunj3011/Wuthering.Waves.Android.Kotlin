@@ -15,8 +15,16 @@
     <color name="gray_transparent">#11707070</color>
     <color name="transparent">#00000000</color>
 
+    <color name="color_aero">#51EBA6</color>
+    <color name="color_glacio">#3EA1E9</color>
+    <color name="color_electro">#A665E7</color>
+    <color name="color_fusion">#ED7150</color>
+    <color name="color_havoc">#E049A9</color>
+    <color name="color_spectro">#F2DD69</color>
+
     <!-- Dark mode color -->
     <color name="app_bg">#242424</color>
     <color name="app_fg">#FFFFFFFF</color>
     <color name="goldyellowThird">#917A4E</color>
+    <color name="grayChar">#000</color>
 </resources>

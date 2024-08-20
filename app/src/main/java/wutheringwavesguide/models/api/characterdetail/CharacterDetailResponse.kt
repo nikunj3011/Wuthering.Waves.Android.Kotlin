@@ -21,7 +21,7 @@ data class CharacterDetailResponse(
     val img2: String,
     val imgRegion: String?,
     val region: String?,
-    val introduction: Introduction,
+    val introduction: Introduction?,
     val isNew: Boolean,
     val name: String,
     val pros: Pros,

@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="1200dp"
-    android:elevation="20dp"
+    android:layout_height="1500dp"
+    android:elevation="0dp"
     android:fillViewport="true">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/characterListItemBottomSheet"
         android:layout_width="match_parent"
-        android:layout_height="1134dp"
+        android:layout_height="1454dp"
         android:background="@drawable/layout_bg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,7 +21,7 @@
             android:layout_width="138dp"
             android:layout_height="135dp"
             android:layout_marginTop="36dp"
-            android:alpha="0.7"
+            android:alpha="1.0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.941"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,8 +30,8 @@
 
         <ImageView
             android:id="@+id/imageViewCharacterBottomSheet"
-            android:layout_width="301dp"
-            android:layout_height="408dp"
+            android:layout_width="263dp"
+            android:layout_height="341dp"
             android:layout_marginTop="136dp"
             android:alpha="0.7"
             android:elevation="-2dp"
@@ -40,29 +40,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
-
-        <TextView
-            android:id="@+id/textWeaponCharacterBottomSheet"
-            android:layout_width="76dp"
-            android:layout_height="22dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="8dp"
-            android:text="TextView"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterBottomSheet" />
-
-        <TextView
-            android:id="@+id/textCharacterSonataEffectBottomSheet"
-            android:layout_width="76dp"
-            android:layout_height="22dp"
-            android:layout_marginEnd="20dp"
-            android:text="TextView"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.694"
-            app:layout_constraintStart_toEndOf="@+id/textWeaponCharacterBottomSheet" />
 
         <TextView
             android:id="@+id/textCharacterWeaponBottomSheet"
@@ -79,10 +56,8 @@
             android:id="@+id/imageViewCharacterElementBottomSheet"
             android:layout_width="30dp"
             android:layout_height="26dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="88dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/txtCharacterNameBottomSheet"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="96dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
@@ -92,47 +67,53 @@
             android:layout_width="0dp"
             android:layout_height="191dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="650dp"
+            android:layout_marginBottom="128dp"
+            android:background="@drawable/borderrect"
             android:paddingRight="10dp"
-            android:text="TextView"
+            android:text="Loading..."
             android:textAlignment="viewStart"
+            android:textColor="#AAEFEAE6"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.537"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewCharacterBottomSheet"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewCharacterSkillUpgradesMaterials" />
 
         <TextView
             android:id="@+id/txtCharacterNameBottomSheet"
-            android:layout_width="309dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="68dp"
-            android:layout_marginEnd="30dp"
-            android:fontFamily="@font/poppins"
-            android:gravity="right"
-            android:text="Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="76dp"
+
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/borderrect"
+            android:fontFamily="@font/bodoni_moda_bold"
+            android:maxWidth="270dp"
+            android:text="Loading..."
             android:textAlignment="textStart"
             android:textColor="@color/white"
-            android:textSize="48sp"
+            android:textSize="55sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCharacterElementBottomSheet"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textCharacterNameTransparentBottomSheet"
             android:layout_width="395dp"
             android:layout_height="122dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppins"
-            android:gravity="right"
-            android:text="TextView"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/bodoni_moda_bold"
+            android:text="Loading..."
             android:textAlignment="textStart"
             android:textColor="@color/gray_transparent"
             android:textSize="90sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -144,7 +125,7 @@
             android:layout_marginTop="144dp"
             android:fontFamily="@font/poppins"
             android:rotation="270"
-            android:text="TextView"
+            android:text="Loading..."
             android:textColor="@color/white"
             android:textSize="34sp"
             android:textStyle="italic"
@@ -158,9 +139,10 @@
             android:layout_width="wrap_content"
             android:layout_height="29dp"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
+
             android:fontFamily="@font/poppins"
-            android:text="TextView"
+            android:text="Loading..."
             android:textColor="@color/white"
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -175,6 +157,7 @@
             android:fontFamily="@font/poppins"
             android:gravity="right"
             android:text="Best Set "
+            android:textColor="#AAEFEAE6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewCharacterBottomSheet" />
 
@@ -184,7 +167,7 @@
             android:layout_height="31dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="4dp"
-            android:text="TextView"
+            android:text="Loading..."
             android:textAlignment="viewEnd"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -192,65 +175,49 @@
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
         <TextView
-            android:id="@+id/textSubDPSCharacterBottomSheet"
-            android:layout_width="65dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="24dp"
+            android:id="@+id/textRatingsCharacterBottomSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins"
-            android:text="TextView"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toEndOf="@+id/textMainDPSCharacterBottomSheet"
-            app:layout_constraintTop_toBottomOf="@+id/txtMainEchoBottomSheet" />
-
-        <TextView
-            android:id="@+id/textMainDPSCharacterBottomSheet"
-            android:layout_width="65dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="132dp"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/poppins"
-            android:text="TextView"
+            android:text="Loading..."
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtMainEchoBottomSheet" />
+            app:layout_constraintTop_toBottomOf="@+id/textSubCategoryCharacterBottomSheet" />
 
         <TextView
-            android:id="@+id/textOverallCharacterBottomSheet"
-            android:layout_width="65dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="20dp"
+            android:id="@+id/textMainCategoryCharacterBottomSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
-            android:text="TextView"
+            android:fontFamily="@font/poppins"
+            android:text="Loading..."
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/textDescriptionBottomSheet"
-            app:layout_constraintStart_toEndOf="@+id/textSupportCharacterBottomSheet"
-            app:layout_constraintTop_toBottomOf="@+id/textSubDPSCharacterBottomSheet"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/textSupportCharacterBottomSheet"
-            android:layout_width="65dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="132dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
-            android:text="TextView"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/textDescriptionBottomSheet"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textMainDPSCharacterBottomSheet"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+        <TextView
+            android:id="@+id/textSubCategoryCharacterBottomSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Loading..."
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMainCategoryCharacterBottomSheet" />
 
         <TextView
             android:id="@+id/textView15"
-            android:layout_width="68dp"
-            android:layout_height="19dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="36dp"
             android:fontFamily="@font/poppins"
             android:text="Main Echo"
+            android:textColor="#AAEFEAE6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewBestWeapon" />
 
@@ -261,7 +228,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/poppins"
-            android:text="TextView"
+            android:text="Loading..."
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -272,8 +239,8 @@
             android:id="@+id/imageViewWeaponTypeBottomSheet"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="76dp"
             android:rotation="270"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtCharacterWeaponTypeBottomSheet"
@@ -284,32 +251,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
+
             android:fontFamily="@font/poppins"
             android:text="Best Weapon"
+            android:textColor="#AAEFEAE6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewCharacterBottomSheet" />
+            app:layout_constraintTop_toBottomOf="@+id/imageViewWeaponTypeBottomSheet" />
 
         <ImageView
             android:id="@+id/imageViewStarGradient"
             android:layout_width="0dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="248dp"
+            android:layout_height="100dp"
             android:background="@drawable/five_star_flat"
             android:elevation="-1dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textCharacterNameTransparentBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/txtCharacterWeaponTypeBottomSheet"
             tools:srcCompat="@drawable/five_star_flat" />
 
         <View
-            android:id="@+id/view"
-            android:layout_width="30dp"
+            android:id="@+id/viewCharacterNameBottomSheet"
+            android:layout_width="200dp"
             android:layout_height="4dp"
-            android:layout_marginStart="36dp"
+            android:layout_marginStart="48dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:alpha="0.7"
             android:background="@color/goldyellowThird"
+            android:elevation="-8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -322,14 +293,430 @@
             android:layout_marginStart="36dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="4dp"
+            android:background="@drawable/layout_bg"
             android:fontFamily="@font/poppins_extralight"
-            android:text="TextView"
+            android:text="Loading..."
             android:textColor="@color/gray_200"
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/imageViewCharacterBottomSheet"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtCharacterNameBottomSheet" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+
+            android:text="Echo Sets: Max 12"
+            android:textColor="#AAEFEAE6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtMainEchoBottomSheet" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="4 Cost"
+            android:textColor="#AAEFEAE6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="3 Cost"
+            android:textColor="#AAEFEAE6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="1 Cost"
+            android:textColor="#AAEFEAE6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+        <TextView
+            android:id="@+id/textView4CEchoSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Loading..."
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/textView32"
+            app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+        <TextView
+            android:id="@+id/textView3CEchoSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Loading..."
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/textView33"
+            app:layout_constraintTop_toBottomOf="@+id/textView4CEchoSet" />
+
+        <TextView
+            android:id="@+id/textView1CEchoSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Loading..."
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/textView34"
+            app:layout_constraintTop_toBottomOf="@+id/textView3CEchoSet" />
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:text="Best Teammates"
+            android:textColor="#AAEFEAE6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCharacterSubStats" />
+
+        <TextView
+            android:id="@+id/textViewCharacterBestTeammates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:text="Loading..."
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+        <TextView
+            android:id="@+id/textViewCharacterSubStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:text="Loading..."
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+
+            android:text="Sub Stats"
+            android:textColor="#AAEFEAE6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1CEchoSet" />
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+
+            android:text="Ratings &amp; Role"
+            android:textColor="#AAEFEAE6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCharacterBestTeammates" />
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+
+            android:text="Upgrade Materials"
+            android:textColor="#AAEFEAE6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textRatingsCharacterBottomSheet" />
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+
+            android:text="Character Ascension"
+            android:textColor="#AAEFEAE6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+
+            android:gravity="right"
+            android:text="Skill Upgrades"
+            android:textColor="#AAEFEAE6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textView44"
+            app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+        <TextView
+            android:id="@+id/textViewCharacterAscensionMaterials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:text="Loading..."
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+        <TextView
+            android:id="@+id/textViewCharacterSkillUpgradesMaterials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="right"
+            android:text="Loading..."
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView45" />
+
+        <View
+            android:id="@+id/viewCharacterLineWeaponLineBottomSheet"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <View
+            android:id="@+id/viewCharacterLineMainEchoLineBottomSheet"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <View
+            android:id="@+id/viewCharacterLineEchoLineBottomSheet"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+        <View
+            android:id="@+id/viewCharacterLineEchoSetLineBottomSheet"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.388"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+        <View
+            android:id="@+id/viewCharacterLineSubStatsLineBottomSheet"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+        <View
+            android:id="@+id/viewCharacterLineTeamLineBottomSheet"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.398"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+        <View
+            android:id="@+id/viewCharacterLineRatingLineBottomSheet"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.422"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+        <View
+            android:id="@+id/viewCharacterLineUpgradeMatLineBottomSheet"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.388"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+        <View
+            android:id="@+id/viewCharacterLineCharAscBottomSheet"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+        <View
+            android:id="@+id/viewCharacterLineCharSkillUpBottomSheet"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/viewCharacterLineCharAscBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/textView45" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="578dp"
+            android:elevation="-10dp"
+            android:src="@drawable/wuwa_bg_char_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView26"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tacetmark" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="204dp"
+            android:layout_height="159dp"
+            android:layout_marginTop="20dp"
+            android:elevation="-10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textCharDesSmall"
+            app:srcCompat="@drawable/abstract_pattern_grid" />
+
+        <ImageView
+            android:id="@+id/imageView25"
+            android:layout_width="wrap_content"
+            android:layout_height="314dp"
+            android:alpha="0.3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17"
+            app:srcCompat="@drawable/abstract_pattern_grid" />
+
+        <ImageView
+            android:id="@+id/imageView27"
+            android:layout_width="wrap_content"
+            android:layout_height="314dp"
+            android:alpha="0.3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView25"
+            app:srcCompat="@drawable/abstract_pattern_grid" />
+
+        <View
+            android:id="@+id/view68"
+            android:layout_width="1dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/view69"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view68" />
+
+
+        <View
+            android:id="@+id/view61"
+            android:layout_width="1dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view62" />
+
+        <View
+            android:id="@+id/view62"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="160dp"
+            android:background="@color/goldyellowThird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

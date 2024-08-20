@@ -13,6 +13,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import wutheringwavesguide.R
 import wutheringwavesguide.models.api.character.CharacterResponseItem
 import java.util.Timer
@@ -70,6 +71,7 @@ class MyViewHolder3(val view: View):RecyclerView.ViewHolder(view){
         if(character.img != null){
             Glide.with(view)
                 .load(character.img)
+                .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
                 .into(echoImageView)
             if(character.bStyle == "linear-gradient(0deg, rgba(119,61,166,1) -79%, rgba(255,255,255,0) 100%)"){
                 echoImageView.background = ContextCompat.getDrawable(contextCharacter, R.drawable.four_star_gradient)
